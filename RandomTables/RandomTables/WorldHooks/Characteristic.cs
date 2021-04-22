@@ -38,7 +38,8 @@ namespace RandomTables.WorldHooks
                 {1, 24, "Climate or Landform" },
                 {25, 34, "Sites of Interest" },
                 {35, 60, "Cultures" },
-                {61, 85, "Situation" }
+                {61, 85, "Situation" },
+                {86, 100, "Historical" }
             };
         }
 
@@ -181,6 +182,24 @@ namespace RandomTables.WorldHooks
 
             var expectedRollResult = 85;
             var expectedCharacteristic = "Situation";
+
+            Assert.AreEqual(expectedRollResult, rollResult);
+            Assert.AreEqual(expectedCharacteristic, characteristic);
+        }
+
+        [TestMethod]
+        public void HistoricalWhen86IsRolled()
+        {
+            var percentile = new PercentileDice0and0(_seedGenerates8, _seedGenerates6);
+            var rollResult = percentile.RollDice();
+
+            var characteristic = characteristicsTable.Query(rollResult)
+                                            .ToList()
+                                            .Select(x => x)
+                                            .FirstOrDefault();
+
+            var expectedRollResult = 86;
+            var expectedCharacteristic = "Historical";
 
             Assert.AreEqual(expectedRollResult, rollResult);
             Assert.AreEqual(expectedCharacteristic, characteristic);
