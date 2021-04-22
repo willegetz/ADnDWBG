@@ -7,17 +7,25 @@ using System.Linq;
 
 namespace RandomTables.WorldHooks
 {
+
+    // The characteristics are in a collection assigned to a range of numbers.
+    // If the percentile dice 0 and 0 return a result between the upper and lower
+    // bounds of the range, inclusive, then that characteristic is chosen.
+    // The full range goes from 01 to 00.
+
+    // Climate or landform is chosen when the result is 01 to 24.
+    // Random seed: Guid.NewGuid().GetHashCode();
+
     [TestClass]
     public class Characteristic
     {
-
-        // The characteristics are in a collection assigned to a range of numbers.
-        // If the percentile dice 0 and 0 return a result between the upper and lower
-        // bounds of the range, inclusive, then that characteristic is chosen.
-        // The full range goes from 01 to 00.
-
-        // Climate or landform is chosen when the result is 01 to 24.
-        // Random seed: Guid.NewGuid().GetHashCode();
+        private const int _seedGenerates0 = 14;
+        private const int _seedGenerates1 = 18;
+        private const int _seedGenerates2 = 1;
+        private const int _seedGenerates3 = 5;
+        private const int _seedGenerates4 = 9;
+        private const int _seedGenerates5 = 13;
+        private const int _seedGenerates6 = 17;
 
         private IntervalTree<int, string> characteristicsTable;
 
@@ -28,17 +36,15 @@ namespace RandomTables.WorldHooks
             {
                 {1, 24, "Climate or Landform" },
                 {25, 34, "Sites of Interest" },
-                {35, 60, "Cultures" }
+                {35, 60, "Cultures" },
+                {61, 85, "Situation" }
             };
         }
 
         [TestMethod]
         public void ClimateOrLandformWhen01IsRolled()
         {
-            var seedGenerates0 = 14;
-            var seedGenerates1 = 18;
-
-            var percentile = new PercentileDice0and0(seedGenerates0, seedGenerates1);
+            var percentile = new PercentileDice0and0(_seedGenerates0, _seedGenerates1);
             var rollResult = percentile.RollDice();
 
             var characteristic = characteristicsTable.Query(rollResult)
@@ -56,10 +62,7 @@ namespace RandomTables.WorldHooks
         [TestMethod]
         public void ClimateOrLandformWhen24IsRolled()
         {
-            var seedGenerates2 = 1;
-            var seedGenerates4 = 9;
-
-            var percentile = new PercentileDice0and0(seedGenerates2, seedGenerates4);
+            var percentile = new PercentileDice0and0(_seedGenerates2, _seedGenerates4);
             var rollResult = percentile.RollDice();
 
             var characteristic = characteristicsTable.Query(rollResult)
@@ -77,10 +80,7 @@ namespace RandomTables.WorldHooks
         [TestMethod]
         public void SitesOfInterestWhen25IsRolled()
         {
-            var seedGenerates2 = 1;
-            var seedGenerates5 = 13;
-
-            var percentile = new PercentileDice0and0(seedGenerates2, seedGenerates5);
+            var percentile = new PercentileDice0and0(_seedGenerates2, _seedGenerates5);
             var rollResult = percentile.RollDice();
 
             var characteristic = characteristicsTable.Query(rollResult)
@@ -98,10 +98,7 @@ namespace RandomTables.WorldHooks
         [TestMethod]
         public void SitesOfInterestWhen34IsRolled()
         {
-            var seedGenerates3 = 5;
-            var seedGenerates4 = 9;
-
-            var percentile = new PercentileDice0and0(seedGenerates3, seedGenerates4);
+            var percentile = new PercentileDice0and0(_seedGenerates3, _seedGenerates4);
             var rollResult = percentile.RollDice();
 
             var characteristic = characteristicsTable.Query(rollResult)
@@ -119,10 +116,7 @@ namespace RandomTables.WorldHooks
         [TestMethod]
         public void CulturesWhen35IsRolled()
         {
-            var seedGenerates3 = 5;
-            var seedGenerates5 = 13;
-
-            var percentile = new PercentileDice0and0(seedGenerates3, seedGenerates5);
+            var percentile = new PercentileDice0and0(_seedGenerates3, _seedGenerates5);
             var rollResult = percentile.RollDice();
 
             var characteristic = characteristicsTable.Query(rollResult)
@@ -140,10 +134,7 @@ namespace RandomTables.WorldHooks
         [TestMethod]
         public void CulturesWhen60IsRolled()
         {
-            var seedGenerates6 = 17;
-            var seedGenerates0 = 14;
-
-            var percentile = new PercentileDice0and0(seedGenerates6, seedGenerates0);
+            var percentile = new PercentileDice0and0(_seedGenerates6, _seedGenerates0);
             var rollResult = percentile.RollDice();
 
             var characteristic = characteristicsTable.Query(rollResult)
@@ -153,6 +144,24 @@ namespace RandomTables.WorldHooks
 
             var expectedRollResult = 60;
             var expectedCharacteristic = "Cultures";
+
+            Assert.AreEqual(expectedRollResult, rollResult);
+            Assert.AreEqual(expectedCharacteristic, characteristic);
+        }
+
+        [TestMethod]
+        public void SituationWhen61IsRolled()
+        {
+            var percentile = new PercentileDice0and0(_seedGenerates6, _seedGenerates1);
+            var rollResult = percentile.RollDice();
+
+            var characteristic = characteristicsTable.Query(rollResult)
+                                            .ToList()
+                                            .Select(x => x)
+                                            .FirstOrDefault();
+
+            var expectedRollResult = 61;
+            var expectedCharacteristic = "Situation";
 
             Assert.AreEqual(expectedRollResult, rollResult);
             Assert.AreEqual(expectedCharacteristic, characteristic);
