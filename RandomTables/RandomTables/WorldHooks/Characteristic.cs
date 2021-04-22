@@ -27,7 +27,8 @@ namespace RandomTables.WorldHooks
             characteristicsTable = new IntervalTree<int, string>()
             {
                 {1, 24, "Climate or Landform" },
-                {25, 34, "Sites of Interest" }
+                {25, 34, "Sites of Interest" },
+                {35, 60, "Cultures" }
             };
         }
 
@@ -110,6 +111,27 @@ namespace RandomTables.WorldHooks
 
             var expectedRollResult = 34;
             var expectedCharacteristic = "Sites of Interest";
+
+            Assert.AreEqual(expectedRollResult, rollResult);
+            Assert.AreEqual(expectedCharacteristic, characteristic);
+        }
+
+        [TestMethod]
+        public void CulturesWhen35IsRolled()
+        {
+            var seedGenerates3 = 5;
+            var seedGenerates5 = 13;
+
+            var percentile = new PercentileDice0and0(seedGenerates3, seedGenerates5);
+            var rollResult = percentile.RollDice();
+
+            var characteristic = characteristicsTable.Query(rollResult)
+                                            .ToList()
+                                            .Select(x => x)
+                                            .FirstOrDefault();
+
+            var expectedRollResult = 35;
+            var expectedCharacteristic = "Cultures";
 
             Assert.AreEqual(expectedRollResult, rollResult);
             Assert.AreEqual(expectedCharacteristic, characteristic);
