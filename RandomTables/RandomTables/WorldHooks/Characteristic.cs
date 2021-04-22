@@ -26,6 +26,7 @@ namespace RandomTables.WorldHooks
         private const int _seedGenerates4 = 9;
         private const int _seedGenerates5 = 13;
         private const int _seedGenerates6 = 17;
+        private const int _seedGenerates8 = 4;
 
         private IntervalTree<int, string> characteristicsTable;
 
@@ -161,6 +162,24 @@ namespace RandomTables.WorldHooks
                                             .FirstOrDefault();
 
             var expectedRollResult = 61;
+            var expectedCharacteristic = "Situation";
+
+            Assert.AreEqual(expectedRollResult, rollResult);
+            Assert.AreEqual(expectedCharacteristic, characteristic);
+        }
+
+        [TestMethod]
+        public void SituationWhen85IsRolled()
+        {
+            var percentile = new PercentileDice0and0(_seedGenerates8, _seedGenerates5);
+            var rollResult = percentile.RollDice();
+
+            var characteristic = characteristicsTable.Query(rollResult)
+                                            .ToList()
+                                            .Select(x => x)
+                                            .FirstOrDefault();
+
+            var expectedRollResult = 85;
             var expectedCharacteristic = "Situation";
 
             Assert.AreEqual(expectedRollResult, rollResult);
