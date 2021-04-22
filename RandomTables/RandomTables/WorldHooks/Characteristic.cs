@@ -43,8 +43,10 @@ namespace RandomTables.WorldHooks
                                             .Select(x => x)
                                             .FirstOrDefault();
 
+            var expectedRollResult = 1;
             var expectedCharacteristic = "Climate or Landform";
 
+            Assert.AreEqual(expectedRollResult, rollResult);
             Assert.AreEqual(expectedCharacteristic, characteristic);
         }
 
@@ -62,9 +64,10 @@ namespace RandomTables.WorldHooks
                                             .Select(x => x)
                                             .FirstOrDefault();
 
+            var expectedRollResult = 24;
             var expectedCharacteristic = "Climate or Landform";
 
-            Assert.AreEqual(24, rollResult);
+            Assert.AreEqual(expectedRollResult, rollResult);
             Assert.AreEqual(expectedCharacteristic, characteristic);
         }
     }
