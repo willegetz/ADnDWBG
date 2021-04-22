@@ -1,8 +1,6 @@
 ﻿using DiceTypes.DieTypes;
 using IntervalTree;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using RandomTables.TestHelpers;
-using System;
 using System.Linq;
 
 namespace RandomTables.WorldHooks
@@ -17,7 +15,7 @@ namespace RandomTables.WorldHooks
     // Random seed: Guid.NewGuid().GetHashCode();
 
     [TestClass]
-    public class Characteristic
+    public class CharacteristicTests
     {
         private const int _seedGenerates0 = 14;
         private const int _seedGenerates1 = 18;
