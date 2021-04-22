@@ -136,5 +136,26 @@ namespace RandomTables.WorldHooks
             Assert.AreEqual(expectedRollResult, rollResult);
             Assert.AreEqual(expectedCharacteristic, characteristic);
         }
+
+        [TestMethod]
+        public void CulturesWhen60IsRolled()
+        {
+            var seedGenerates6 = 17;
+            var seedGenerates0 = 14;
+
+            var percentile = new PercentileDice0and0(seedGenerates6, seedGenerates0);
+            var rollResult = percentile.RollDice();
+
+            var characteristic = characteristicsTable.Query(rollResult)
+                                            .ToList()
+                                            .Select(x => x)
+                                            .FirstOrDefault();
+
+            var expectedRollResult = 60;
+            var expectedCharacteristic = "Cultures";
+
+            Assert.AreEqual(expectedRollResult, rollResult);
+            Assert.AreEqual(expectedCharacteristic, characteristic);
+        }
     }
 }
