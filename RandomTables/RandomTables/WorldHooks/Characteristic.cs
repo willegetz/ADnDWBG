@@ -47,5 +47,25 @@ namespace RandomTables.WorldHooks
 
             Assert.AreEqual(expectedCharacteristic, characteristic);
         }
+
+        [TestMethod]
+        public void ClimateOrLandformWhen24IsRolled()
+        {
+            var seedGenerates2 = 1;
+            var seedGenerates4 = 9;
+
+            var percentile = new PercentileDice0and0(seedGenerates2, seedGenerates4);
+            var rollResult = percentile.RollDice();
+
+            var characteristic = characteristicsTable.Query(rollResult)
+                                            .ToList()
+                                            .Select(x => x)
+                                            .FirstOrDefault();
+
+            var expectedCharacteristic = "Climate or Landform";
+
+            Assert.AreEqual(24, rollResult);
+            Assert.AreEqual(expectedCharacteristic, characteristic);
+        }
     }
 }
