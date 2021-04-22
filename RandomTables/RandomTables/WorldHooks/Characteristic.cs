@@ -1,6 +1,7 @@
 ﻿using DiceTypes.DieTypes;
 using IntervalTree;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using RandomTables.TestHelpers;
 using System;
 using System.Linq;
 
@@ -87,6 +88,27 @@ namespace RandomTables.WorldHooks
                                             .FirstOrDefault();
 
             var expectedRollResult = 25;
+            var expectedCharacteristic = "Sites of Interest";
+
+            Assert.AreEqual(expectedRollResult, rollResult);
+            Assert.AreEqual(expectedCharacteristic, characteristic);
+        }
+
+        [TestMethod]
+        public void SitesOfInterestWhen34IsRolled()
+        {
+            var seedGenerates3 = 5;
+            var seedGenerates4 = 9;
+
+            var percentile = new PercentileDice0and0(seedGenerates3, seedGenerates4);
+            var rollResult = percentile.RollDice();
+
+            var characteristic = characteristicsTable.Query(rollResult)
+                                            .ToList()
+                                            .Select(x => x)
+                                            .FirstOrDefault();
+
+            var expectedRollResult = 34;
             var expectedCharacteristic = "Sites of Interest";
 
             Assert.AreEqual(expectedRollResult, rollResult);
