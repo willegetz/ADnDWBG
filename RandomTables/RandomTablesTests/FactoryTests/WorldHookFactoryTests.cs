@@ -2,6 +2,7 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using RandomTables.WorldHooks;
 using System;
+using System.Linq;
 
 namespace RandomTablesTests.FactoryTests
 {
@@ -9,6 +10,7 @@ namespace RandomTablesTests.FactoryTests
     public class WorldHookFactoryTests
     {
         private IntervalTree<int, string> characteristicsTable;
+        private IntervalTree<int, Func<string>> factoryTable;
 
         private const int _d10SeedGenerates0 = 14;
         private const int _d10SeedGenerates1 = 18;
@@ -30,6 +32,11 @@ namespace RandomTablesTests.FactoryTests
                 {61, 85, "Situation" },
                 {86, 99, "Historical" },
                 {0, 0, "Historical" }
+            };
+
+            factoryTable = new IntervalTree<int, Func<string>>()
+            {
+                {1, 24, GetWorldHook },
             };
         }
 
@@ -57,7 +64,8 @@ namespace RandomTablesTests.FactoryTests
         [TestMethod]
         public void GetWorldHookTest()
         {
-            var worldHook = GetWorldHook();
+            var tableResult = factoryTable.Query(1).FirstOrDefault();
+            var worldHook = tableResult();
 
             var expectedHook = @"Characteristic: Climate or Landform
 Subtype: Forest";
