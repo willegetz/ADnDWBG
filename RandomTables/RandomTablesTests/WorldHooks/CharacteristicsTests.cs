@@ -28,14 +28,10 @@ namespace RandomTablesTests.WorldHooks
         public void ClimateOrLandformWhen01IsRolled()
         {
             var characteristics = new Characteristics(_seedGenerates0, _seedGenerates1);
-            
-            var rollResult = characteristics.RollDice();
-            var characteristic = characteristics.LookupType(rollResult);
+            var characteristic = characteristics.GetCharacteristic();
 
-            var expectedRollResult = 1;
             var expectedCharacteristic = "Climate or Landform";
 
-            Assert.AreEqual(expectedRollResult, rollResult);
             Assert.AreEqual(expectedCharacteristic, characteristic);
         }
 
@@ -43,14 +39,10 @@ namespace RandomTablesTests.WorldHooks
         public void ClimateOrLandformWhen24IsRolled()
         {
             var characteristics = new Characteristics(_seedGenerates2, _seedGenerates4);
+            var characteristic = characteristics.GetCharacteristic();
 
-            var rollResult = characteristics.RollDice();
-            var characteristic = characteristics.LookupType(rollResult);
-
-            var expectedRollResult = 24;
             var expectedCharacteristic = "Climate or Landform";
 
-            Assert.AreEqual(expectedRollResult, rollResult);
             Assert.AreEqual(expectedCharacteristic, characteristic);
         }
 
@@ -58,14 +50,10 @@ namespace RandomTablesTests.WorldHooks
         public void SitesOfInterestWhen25IsRolled()
         {
             var characteristics = new Characteristics(_seedGenerates2, _seedGenerates5);
+            var characteristic = characteristics.GetCharacteristic();
 
-            var rollResult = characteristics.RollDice();
-            var characteristic = characteristics.LookupType(rollResult);
-
-            var expectedRollResult = 25;
             var expectedCharacteristic = "Sites of Interest";
 
-            Assert.AreEqual(expectedRollResult, rollResult);
             Assert.AreEqual(expectedCharacteristic, characteristic);
         }
 
@@ -73,14 +61,10 @@ namespace RandomTablesTests.WorldHooks
         public void SitesOfInterestWhen34IsRolled()
         {
             var characteristics = new Characteristics(_seedGenerates3, _seedGenerates4);
+            var characteristic = characteristics.GetCharacteristic();
 
-            var rollResult = characteristics.RollDice();
-            var characteristic = characteristics.LookupType(rollResult);
-
-            var expectedRollResult = 34;
             var expectedCharacteristic = "Sites of Interest";
 
-            Assert.AreEqual(expectedRollResult, rollResult);
             Assert.AreEqual(expectedCharacteristic, characteristic);
         }
 
@@ -88,14 +72,10 @@ namespace RandomTablesTests.WorldHooks
         public void CulturesWhen35IsRolled()
         {
             var characteristics = new Characteristics(_seedGenerates3, _seedGenerates5);
+            var characteristic = characteristics.GetCharacteristic();
 
-            var rollResult = characteristics.RollDice();
-            var characteristic = characteristics.LookupType(rollResult);
-
-            var expectedRollResult = 35;
             var expectedCharacteristic = "Cultures";
 
-            Assert.AreEqual(expectedRollResult, rollResult);
             Assert.AreEqual(expectedCharacteristic, characteristic);
         }
 
@@ -103,14 +83,10 @@ namespace RandomTablesTests.WorldHooks
         public void CulturesWhen60IsRolled()
         {
             var characteristics = new Characteristics(_seedGenerates6, _seedGenerates0);
+            var characteristic = characteristics.GetCharacteristic();
 
-            var rollResult = characteristics.RollDice();
-            var characteristic = characteristics.LookupType(rollResult);
-
-            var expectedRollResult = 60;
             var expectedCharacteristic = "Cultures";
 
-            Assert.AreEqual(expectedRollResult, rollResult);
             Assert.AreEqual(expectedCharacteristic, characteristic);
         }
 
@@ -118,14 +94,10 @@ namespace RandomTablesTests.WorldHooks
         public void SituationWhen61IsRolled()
         {
             var characteristics = new Characteristics(_seedGenerates6, _seedGenerates1);
+            var characteristic = characteristics.GetCharacteristic();
 
-            var rollResult = characteristics.RollDice();
-            var characteristic = characteristics.LookupType(rollResult);
-
-            var expectedRollResult = 61;
             var expectedCharacteristic = "Situation";
 
-            Assert.AreEqual(expectedRollResult, rollResult);
             Assert.AreEqual(expectedCharacteristic, characteristic);
         }
 
@@ -133,14 +105,10 @@ namespace RandomTablesTests.WorldHooks
         public void SituationWhen85IsRolled()
         {
             var characteristics = new Characteristics(_seedGenerates8, _seedGenerates5);
+            var characteristic = characteristics.GetCharacteristic();
 
-            var rollResult = characteristics.RollDice();
-            var characteristic = characteristics.LookupType(rollResult);
-
-            var expectedRollResult = 85;
             var expectedCharacteristic = "Situation";
 
-            Assert.AreEqual(expectedRollResult, rollResult);
             Assert.AreEqual(expectedCharacteristic, characteristic);
         }
 
@@ -148,14 +116,10 @@ namespace RandomTablesTests.WorldHooks
         public void HistoricalWhen86IsRolled()
         {
             var characteristics = new Characteristics(_seedGenerates8, _seedGenerates6);
+            var characteristic = characteristics.GetCharacteristic();
 
-            var rollResult = characteristics.RollDice();
-            var characteristic = characteristics.LookupType(rollResult);
-
-            var expectedRollResult = 86;
             var expectedCharacteristic = "Historical";
 
-            Assert.AreEqual(expectedRollResult, rollResult);
             Assert.AreEqual(expectedCharacteristic, characteristic);
         }
 
@@ -163,14 +127,10 @@ namespace RandomTablesTests.WorldHooks
         public void HistoricalWhen00IsRolled()
         {
             var characteristics = new Characteristics(_seedGenerates0, _seedGenerates0);
+            var characteristic = characteristics.GetCharacteristic();
 
-            var rollResult = characteristics.RollDice();
-            var characteristic = characteristics.LookupType(rollResult);
-
-            var expectedRollResult = 0;
             var expectedCharacteristic = "Historical";
 
-            Assert.AreEqual(expectedRollResult, rollResult);
             Assert.AreEqual(expectedCharacteristic, characteristic);
         }
     }

@@ -36,5 +36,13 @@ namespace RandomTables.WorldHooks
                                             .FirstOrDefault();
             return characteristic;
         }
+
+        public string GetCharacteristic()
+        {
+            var rollResult = RollDice();
+            var characteristic = LookupType(rollResult);
+
+            return characteristic;
+        }
     }
 }
