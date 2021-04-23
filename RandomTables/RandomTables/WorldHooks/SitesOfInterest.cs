@@ -1,5 +1,4 @@
-﻿using DiceTypes;
-using DiceTypes.DieTypes;
+﻿using DiceTypes.DieTypes;
 using System.Collections.Generic;
 
 namespace RandomTables.WorldHooks
