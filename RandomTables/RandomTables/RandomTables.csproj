@@ -50,6 +50,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="WorldHooks\Characteristics.cs" />
     <Compile Include="WorldHooks\Cultures.cs" />
+    <Compile Include="WorldHooks\Historical.cs" />
     <Compile Include="WorldHooks\SitesOfInterest.cs" />
     <Compile Include="WorldHooks\ClimateOrLandforms.cs" />
     <Compile Include="WorldHooks\Situations.cs" />
