@@ -7,7 +7,7 @@ namespace RandomTables.WorldHooks
     {
         private D12 _d12;
 
-        private Dictionary<int, string> sitesOfInterest = new Dictionary<int, string>()
+        private Dictionary<int, string> cultures = new Dictionary<int, string>()
         {
             {1, "African" },
             {2, "Ancient" },
@@ -35,7 +35,7 @@ namespace RandomTables.WorldHooks
 
         public string LookupSubtype(int rollResult)
         {
-            return sitesOfInterest[rollResult];
+            return cultures[rollResult];
         }
     }
 }
