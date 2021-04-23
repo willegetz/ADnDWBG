@@ -61,13 +61,10 @@ namespace RandomTablesTests.WorldHooks
         [TestMethod]
         public void ClimateOrLandformWhen24IsRolled()
         {
-            var percentile = new PercentileDice0and0(_seedGenerates2, _seedGenerates4);
-            var rollResult = percentile.RollDice();
+            var characteristics = new Characteristics(_seedGenerates2, _seedGenerates4);
 
-            var characteristic = characteristicsTable.Query(rollResult)
-                                            .ToList()
-                                            .Select(x => x)
-                                            .FirstOrDefault();
+            var rollResult = characteristics.RollDice();
+            var characteristic = characteristics.GetCharacteristic(rollResult);
 
             var expectedRollResult = 24;
             var expectedCharacteristic = "Climate or Landform";
