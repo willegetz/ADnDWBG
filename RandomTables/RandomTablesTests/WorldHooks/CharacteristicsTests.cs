@@ -30,7 +30,7 @@ namespace RandomTablesTests.WorldHooks
             var characteristics = new Characteristics(_seedGenerates0, _seedGenerates1);
             
             var rollResult = characteristics.RollDice();
-            var characteristic = characteristics.GetCharacteristic(rollResult);
+            var characteristic = characteristics.LookupType(rollResult);
 
             var expectedRollResult = 1;
             var expectedCharacteristic = "Climate or Landform";
@@ -45,7 +45,7 @@ namespace RandomTablesTests.WorldHooks
             var characteristics = new Characteristics(_seedGenerates2, _seedGenerates4);
 
             var rollResult = characteristics.RollDice();
-            var characteristic = characteristics.GetCharacteristic(rollResult);
+            var characteristic = characteristics.LookupType(rollResult);
 
             var expectedRollResult = 24;
             var expectedCharacteristic = "Climate or Landform";
@@ -60,7 +60,7 @@ namespace RandomTablesTests.WorldHooks
             var characteristics = new Characteristics(_seedGenerates2, _seedGenerates5);
 
             var rollResult = characteristics.RollDice();
-            var characteristic = characteristics.GetCharacteristic(rollResult);
+            var characteristic = characteristics.LookupType(rollResult);
 
             var expectedRollResult = 25;
             var expectedCharacteristic = "Sites of Interest";
@@ -75,7 +75,7 @@ namespace RandomTablesTests.WorldHooks
             var characteristics = new Characteristics(_seedGenerates3, _seedGenerates4);
 
             var rollResult = characteristics.RollDice();
-            var characteristic = characteristics.GetCharacteristic(rollResult);
+            var characteristic = characteristics.LookupType(rollResult);
 
             var expectedRollResult = 34;
             var expectedCharacteristic = "Sites of Interest";
@@ -90,7 +90,7 @@ namespace RandomTablesTests.WorldHooks
             var characteristics = new Characteristics(_seedGenerates3, _seedGenerates5);
 
             var rollResult = characteristics.RollDice();
-            var characteristic = characteristics.GetCharacteristic(rollResult);
+            var characteristic = characteristics.LookupType(rollResult);
 
             var expectedRollResult = 35;
             var expectedCharacteristic = "Cultures";
@@ -105,7 +105,7 @@ namespace RandomTablesTests.WorldHooks
             var characteristics = new Characteristics(_seedGenerates6, _seedGenerates0);
 
             var rollResult = characteristics.RollDice();
-            var characteristic = characteristics.GetCharacteristic(rollResult);
+            var characteristic = characteristics.LookupType(rollResult);
 
             var expectedRollResult = 60;
             var expectedCharacteristic = "Cultures";
@@ -120,7 +120,7 @@ namespace RandomTablesTests.WorldHooks
             var characteristics = new Characteristics(_seedGenerates6, _seedGenerates1);
 
             var rollResult = characteristics.RollDice();
-            var characteristic = characteristics.GetCharacteristic(rollResult);
+            var characteristic = characteristics.LookupType(rollResult);
 
             var expectedRollResult = 61;
             var expectedCharacteristic = "Situation";
@@ -135,7 +135,7 @@ namespace RandomTablesTests.WorldHooks
             var characteristics = new Characteristics(_seedGenerates8, _seedGenerates5);
 
             var rollResult = characteristics.RollDice();
-            var characteristic = characteristics.GetCharacteristic(rollResult);
+            var characteristic = characteristics.LookupType(rollResult);
 
             var expectedRollResult = 85;
             var expectedCharacteristic = "Situation";
@@ -150,7 +150,7 @@ namespace RandomTablesTests.WorldHooks
             var characteristics = new Characteristics(_seedGenerates8, _seedGenerates6);
 
             var rollResult = characteristics.RollDice();
-            var characteristic = characteristics.GetCharacteristic(rollResult);
+            var characteristic = characteristics.LookupType(rollResult);
 
             var expectedRollResult = 86;
             var expectedCharacteristic = "Historical";
@@ -165,7 +165,7 @@ namespace RandomTablesTests.WorldHooks
             var characteristics = new Characteristics(_seedGenerates0, _seedGenerates0);
 
             var rollResult = characteristics.RollDice();
-            var characteristic = characteristics.GetCharacteristic(rollResult);
+            var characteristic = characteristics.LookupType(rollResult);
 
             var expectedRollResult = 0;
             var expectedCharacteristic = "Historical";

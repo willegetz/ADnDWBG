@@ -1,10 +1,6 @@
 ﻿using DiceTypes.DieTypes;
 using IntervalTree;
-using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace RandomTables.WorldHooks
 {
@@ -32,7 +28,7 @@ namespace RandomTables.WorldHooks
             return _percentileDice.RollDice();
         }
 
-        public string GetCharacteristic(int rollResult)
+        public string LookupType(int rollResult)
         {
             var characteristic = characteristicsTable.Query(rollResult)
                                             .ToList()
