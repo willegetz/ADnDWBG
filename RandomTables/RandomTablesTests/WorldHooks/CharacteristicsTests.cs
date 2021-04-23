@@ -1,9 +1,10 @@
 ﻿using DiceTypes.DieTypes;
 using IntervalTree;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using RandomTables.WorldHooks;
 using System.Linq;
 
-namespace RandomTables.WorldHooks
+namespace RandomTablesTests.WorldHooks
 {
 
     // The characteristics are in a collection assigned to a range of numbers.
@@ -15,7 +16,7 @@ namespace RandomTables.WorldHooks
     // Random seed: Guid.NewGuid().GetHashCode();
 
     [TestClass]
-    public class CharacteristicTests
+    public class CharacteristicsTests
     {
         private const int _seedGenerates0 = 14;
         private const int _seedGenerates1 = 18;
@@ -45,8 +46,8 @@ namespace RandomTables.WorldHooks
         [TestMethod]
         public void ClimateOrLandformWhen01IsRolled()
         {
-            var percentile = new PercentileDice0and0(_seedGenerates0, _seedGenerates1);
-            var rollResult = percentile.RollDice();
+            var characteristics = new Characteristics(_seedGenerates0, _seedGenerates1);
+            var rollResult = characteristics.RollDice();
 
             var characteristic = characteristicsTable.Query(rollResult)
                                             .ToList()

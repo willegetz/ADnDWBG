@@ -8,8 +8,8 @@
     <ProjectGuid>{CB98293C-546F-4F93-974A-88FD2A94A30B}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>RandomTables</RootNamespace>
-    <AssemblyName>RandomTables</AssemblyName>
+    <RootNamespace>RandomTablesTests</RootNamespace>
+    <AssemblyName>RandomTablesTests</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -57,10 +57,16 @@
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TestHelpers\GetSeedForValue.cs" />
-    <Compile Include="WorldHooks\CharacteristicTests.cs" />
+    <Compile Include="WorldHooks\CharacteristicsTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\RandomTables\RandomTables.csproj">
+      <Project>{557c8a43-d7e8-4efb-9beb-bc4c1edd9ac3}</Project>
+      <Name>RandomTables</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
