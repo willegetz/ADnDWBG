@@ -41,5 +41,13 @@ namespace RandomTables.WorldHooks
         {
             return climateOrLandforms[rollResult];
         }
+
+        public string GetCharacteristicSubtype()
+        {
+            var rollResult = RollDie();
+            var subtype = LookupSubtype(rollResult);
+
+            return subtype;
+        }
     }
 }
