@@ -47,12 +47,9 @@ namespace RandomTablesTests.WorldHooks
         public void ClimateOrLandformWhen01IsRolled()
         {
             var characteristics = new Characteristics(_seedGenerates0, _seedGenerates1);
+            
             var rollResult = characteristics.RollDice();
-
-            var characteristic = characteristicsTable.Query(rollResult)
-                                            .ToList()
-                                            .Select(x => x)
-                                            .FirstOrDefault();
+            var characteristic = characteristics.GetCharacteristic(rollResult);
 
             var expectedRollResult = 1;
             var expectedCharacteristic = "Climate or Landform";
