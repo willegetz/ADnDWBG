@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace RandomTables.WorldHooks
 {
-    public class ClimateOrLandforms
+    public class ClimateOrLandformsSubType
     {
         private D16 _d16;
 
@@ -27,7 +27,7 @@ namespace RandomTables.WorldHooks
             {16, "Weather" }
         };
 
-        public ClimateOrLandforms(int d8seed, int d6seed)
+        public ClimateOrLandformsSubType(int d8seed, int d6seed)
         {
             _d16 = new D16(d8seed, d6seed);
         }

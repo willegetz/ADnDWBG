@@ -52,8 +52,9 @@
     <Compile Include="WorldHooks\Cultures.cs" />
     <Compile Include="WorldHooks\Historical.cs" />
     <Compile Include="WorldHooks\SitesOfInterest.cs" />
-    <Compile Include="WorldHooks\ClimateOrLandforms.cs" />
+    <Compile Include="WorldHooks\Subtypes\ClimateOrLandformsSubType.cs" />
     <Compile Include="WorldHooks\Situations.cs" />
+    <Compile Include="WorldHooks\Types\ClimateOrLandforms.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
