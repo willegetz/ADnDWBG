@@ -1,7 +1,7 @@
 ﻿using DiceTypes.DieTypes;
 using IntervalTree;
 using RandomTables.Factories.WorldHooks;
-using RandomTables.WorldHooks.Types;
+using RandomTables.Interfaces.WorldHooks;
 using System;
 using System.Linq;
 
@@ -21,9 +21,10 @@ namespace RandomTables.WorldHooks
                 {0, 0, "Historical" }
             };
 
-        private IntervalTree<int, Func<ClimateOrLandform>> worldHookTable = new IntervalTree<int, Func<ClimateOrLandform>>()
+        private IntervalTree<int, Func<IWorldHookSubtype>> worldHookTable = new IntervalTree<int, Func<IWorldHookSubtype>>()
         {
-            {1, 24, ClimateOrLandformFactory.Get }
+            {1, 24, ClimateOrLandformFactory.Get },
+            {25, 34, SitesOfInterestFactory.Get }
         };
 
         public Characteristics(int tensSeed, int onesSeed)

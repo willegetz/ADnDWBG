@@ -1,9 +1,10 @@
 ﻿using DiceTypes.DieTypes;
+using RandomTables.Interfaces.WorldHooks;
 using System.Collections.Generic;
 
 namespace RandomTables.WorldHooks
 {
-    public class SitesOfInterest
+    public class SitesOfInterestSubtype
     {
         private D8 _d8;
 
@@ -19,7 +20,7 @@ namespace RandomTables.WorldHooks
             {8, "Wilderness" }
         };
 
-        public SitesOfInterest(int d8seed)
+        public SitesOfInterestSubtype(int d8seed)
         {
             _d8 = new D8(d8seed);
         }
@@ -32,6 +33,14 @@ namespace RandomTables.WorldHooks
         public string LookupSubtype(int rollResult)
         {
             return sitesOfInterest[rollResult];
+        }
+
+        public string GetCharacteristicSubtype()
+        {
+            var rollResult = RollDie();
+            var subtype = LookupSubtype(rollResult);
+
+            return subtype;
         }
     }
 }

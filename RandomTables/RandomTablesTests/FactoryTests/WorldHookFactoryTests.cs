@@ -101,7 +101,7 @@ Subtype: Forest";
             var characteristic = characteristics.GetCharacteristic();
 
             // Forest needs to be 5
-            var climateOrLandforms = new ClimateOrLandformsSubType(d8SeedGenerates5, d6SeedGenerates1);
+            var climateOrLandforms = new ClimateOrLandformSubtype(d8SeedGenerates5, d6SeedGenerates1);
             var characteristicSubtype = climateOrLandforms.GetCharacteristicSubtype();
 
             var worldHook = $@"Characteristic: {characteristic}
@@ -115,7 +115,7 @@ Subtype: {characteristicSubtype}";
             var d8SeedGenerates5 = 13;
             var d6SeedGenerates1 = 14;
 
-            var climateOrLandforms = new ClimateOrLandformsSubType(d8SeedGenerates5, d6SeedGenerates1);
+            var climateOrLandforms = new ClimateOrLandformSubtype(d8SeedGenerates5, d6SeedGenerates1);
             var characteristicSubtype = climateOrLandforms.GetCharacteristicSubtype();
 
             var worldHook = $@"Characteristic: Climate or Landform

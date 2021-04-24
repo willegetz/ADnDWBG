@@ -1,11 +1,12 @@
 ﻿using DiceTypes.DieTypes;
+using DiceTypes.Interfaces;
 using System.Collections.Generic;
 
 namespace RandomTables.WorldHooks
 {
-    public class ClimateOrLandformsSubType
+    public class ClimateOrLandformSubtype
     {
-        private D16 _d16;
+        private IDie _d16;
 
         private Dictionary<int, string> climateOrLandforms = new Dictionary<int, string>()
         {
@@ -27,7 +28,7 @@ namespace RandomTables.WorldHooks
             {16, "Weather" }
         };
 
-        public ClimateOrLandformsSubType(int d8seed, int d6seed)
+        public ClimateOrLandformSubtype(int d8seed, int d6seed)
         {
             _d16 = new D16(d8seed, d6seed);
         }

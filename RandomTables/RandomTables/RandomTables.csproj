@@ -47,16 +47,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Interfaces\WorldHooks\IWorldHookSubtype.cs" />
     <Compile Include="Factories\WorldHooks\ClimateOrLandformFactory.cs" />
+    <Compile Include="Factories\WorldHooks\SitesOfInterestFactory.cs" />
     <Compile Include="Factories\WorldHooks\WorldHooksFactory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="WorldHooks\Characteristics.cs" />
     <Compile Include="WorldHooks\Cultures.cs" />
     <Compile Include="WorldHooks\Historical.cs" />
-    <Compile Include="WorldHooks\SitesOfInterest.cs" />
-    <Compile Include="WorldHooks\Subtypes\ClimateOrLandformsSubType.cs" />
+    <Compile Include="WorldHooks\Subtypes\SitesOfInterestSubtype.cs" />
+    <Compile Include="WorldHooks\Subtypes\ClimateOrLandformSubtype.cs" />
     <Compile Include="WorldHooks\Situations.cs" />
     <Compile Include="WorldHooks\Types\ClimateOrLandform.cs" />
+    <Compile Include="WorldHooks\Types\SitesOfInterest.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
