@@ -2,6 +2,7 @@
 using IntervalTree;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using RandomTables.WorldHooks;
+using RandomTables.WorldHooks.Types;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -51,22 +52,15 @@ namespace RandomTablesTests.FactoryTests
         [TestMethod]
         public void ReturnsForestWhenRun()
         {
-            // Can the interval tree return a type of string, func?
-
-            // var characteristic = characteristicsTable.Query(1);
-
-            var characteristics = new Characteristics(_d10SeedGenerates0, _d10SeedGenerates1);
-            var characteristic = characteristics.GetCharacteristic();
-
-            // Forest needs to be 5
             var d8SeedGenerates5 = 13;
             var d6SeedGenerates1 = 14;
-            var climateOrLandforms = new ClimateOrLandformsSubType(d8SeedGenerates5, d6SeedGenerates1);
-            var characteristicSubtype = climateOrLandforms.GetCharacteristicSubtype();
+            
+            var climateOrLandform = new ClimateOrLandform(d8SeedGenerates5, d6SeedGenerates1);
+            var worldHook = climateOrLandform.GetHook();
 
-
-            Assert.AreEqual("Climate or Landform", characteristic);
-            Assert.AreEqual("Forest", characteristicSubtype);
+            var expectedHook = @"Characteristic: Climate or Landform
+Subtype: Forest";
+            Assert.AreEqual(expectedHook, worldHook);
         }
 
         [TestMethod]
@@ -86,7 +80,7 @@ Subtype: Forest";
             var tableResult = factoryTable.Query(1).FirstOrDefault();
             var hookResult = tableResult().GetCharacteristicSubtype();
 
-            Assert.AreEqual("", hookResult);
+            Assert.AreEqual("Forest", hookResult);
         }
 
         public string GetWorldHook()
