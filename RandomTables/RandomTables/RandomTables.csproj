@@ -47,6 +47,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Factories\WorldHooks\ClimateOrLandformFactory.cs" />
+    <Compile Include="Factories\WorldHooks\WorldHooksFactory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="WorldHooks\Characteristics.cs" />
     <Compile Include="WorldHooks\Cultures.cs" />

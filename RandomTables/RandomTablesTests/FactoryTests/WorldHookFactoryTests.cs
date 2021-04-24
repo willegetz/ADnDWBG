@@ -1,6 +1,7 @@
 ﻿using DiceTypes.DieTypes;
 using IntervalTree;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using RandomTables.Factories.WorldHooks;
 using RandomTables.WorldHooks;
 using RandomTables.WorldHooks.Types;
 using System;
@@ -66,7 +67,7 @@ Subtype: Forest";
         [TestMethod]
         public void GetWorldHookTest()
         {
-            Func<string> tableResult = simpleFuncTable.Query(1).FirstOrDefault();
+            var tableResult = simpleFuncTable.Query(1).FirstOrDefault();
             var worldHook = tableResult();
 
             var expectedHook = @"Characteristic: Climate or Landform

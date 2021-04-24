@@ -1,5 +1,8 @@
 ﻿using DiceTypes.DieTypes;
 using IntervalTree;
+using RandomTables.Factories.WorldHooks;
+using RandomTables.WorldHooks.Types;
+using System;
 using System.Linq;
 
 namespace RandomTables.WorldHooks
@@ -17,6 +20,11 @@ namespace RandomTables.WorldHooks
                 {86, 99, "Historical" },
                 {0, 0, "Historical" }
             };
+
+        private IntervalTree<int, Func<ClimateOrLandform>> worldHookTable = new IntervalTree<int, Func<ClimateOrLandform>>()
+        {
+            {1, 24, ClimateOrLandformFactory.Get }
+        };
 
         public Characteristics(int tensSeed, int onesSeed)
         {
@@ -43,6 +51,14 @@ namespace RandomTables.WorldHooks
             var characteristic = LookupType(rollResult);
 
             return characteristic;
+        }
+
+        public string GetWorldHook()
+        {
+            var rollResult = RollDice();
+            var worldHook = worldHookTable.Query(rollResult).FirstOrDefault();
+
+            return worldHook().GetHook();
         }
     }
 }
