@@ -46,6 +46,16 @@ namespace RandomTables.WorldHooks
             return characteristic;
         }
 
+        public Func<IWorldHookSubtype> GetSubtype(int rollResult)
+        {
+            var subtype = worldHookTable.Query(rollResult)
+                                        .ToList()
+                                        .Select(x => x)
+                                        .FirstOrDefault();
+
+            return subtype;
+        }
+
         public string GetCharacteristic()
         {
             var rollResult = RollDice();
@@ -57,7 +67,7 @@ namespace RandomTables.WorldHooks
         public string GetWorldHook()
         {
             var rollResult = RollDice();
-            var worldHook = worldHookTable.Query(rollResult).FirstOrDefault();
+            var worldHook = GetSubtype(rollResult);
 
             return worldHook().GetHook();
         }
