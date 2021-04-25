@@ -1,7 +1,6 @@
 ﻿using DiceTypes.DieTypes;
 using IntervalTree;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using RandomTables.Factories.WorldHooks;
 using RandomTables.WorldHooks;
 using RandomTables.WorldHooks.Types;
 using System;

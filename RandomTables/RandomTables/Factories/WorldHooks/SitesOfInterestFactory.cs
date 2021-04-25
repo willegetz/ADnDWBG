@@ -1,5 +1,4 @@
-﻿using RandomTables.WorldHooks;
-using RandomTables.WorldHooks.Types;
+﻿using RandomTables.WorldHooks.Types;
 using System;
 
 namespace RandomTables.Factories.WorldHooks

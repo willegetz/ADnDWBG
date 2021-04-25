@@ -1,11 +1,4 @@
-﻿using DiceTypes.DieTypes;
-using RandomTables.Factories;
-using RandomTables.Interfaces.WorldHooks;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using RandomTables.Interfaces.WorldHooks;
 
 namespace RandomTables.WorldHooks.Types
 {
