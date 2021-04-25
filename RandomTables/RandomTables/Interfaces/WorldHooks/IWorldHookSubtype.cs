@@ -2,6 +2,7 @@
 {
     public interface IWorldHookSubtype
     {
+        string HookType { get; }
         string GetHook();
     }
 }

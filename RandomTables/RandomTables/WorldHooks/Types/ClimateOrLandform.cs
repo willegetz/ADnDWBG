@@ -11,7 +11,7 @@ namespace RandomTables.WorldHooks.Types
 {
     public class ClimateOrLandform : IWorldHookSubtype
     {
-        private string _hookType = "Climate or Landform";
+        public string HookType { get { return "Climate or Landform"; } }
         private ClimateOrLandformSubtype _subtype;
 
         public ClimateOrLandform(int d8Seed, int d6Seed)
@@ -23,7 +23,7 @@ namespace RandomTables.WorldHooks.Types
         {
             var subtype = _subtype.GetCharacteristicSubtype();
 
-            return $@"Characteristic: {_hookType}
+            return $@"Characteristic: {HookType}
 Subtype: {subtype}";
         }
     }
