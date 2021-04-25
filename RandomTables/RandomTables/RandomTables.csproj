@@ -47,6 +47,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Interfaces\IFactory.cs" />
     <Compile Include="Interfaces\WorldHooks\IWorldHookSubtype.cs" />
     <Compile Include="Factories\WorldHooks\ClimateOrLandformFactory.cs" />
     <Compile Include="Factories\WorldHooks\SitesOfInterestFactory.cs" />

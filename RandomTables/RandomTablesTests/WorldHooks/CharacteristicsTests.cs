@@ -1,5 +1,13 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using IntervalTree;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using RandomTables.Factories.WorldHooks;
+using RandomTables.Interfaces;
+using RandomTables.Interfaces.WorldHooks;
 using RandomTables.WorldHooks;
+using RandomTables.WorldHooks.Types;
+using System;
+using System.Linq;
+using System.Text;
 
 namespace RandomTablesTests.WorldHooks
 {
@@ -28,11 +36,13 @@ namespace RandomTablesTests.WorldHooks
         public void ClimateOrLandformWhen01IsRolled()
         {
             var characteristics = new Characteristics(_seedGenerates0, _seedGenerates1);
-            var characteristic = characteristics.GetCharacteristic();
+            var getSubtypeFunction = characteristics.GetSubtype(1);
+
+            var subtypeHook = getSubtypeFunction().HookType;
 
             var expectedCharacteristic = "Climate or Landform";
 
-            Assert.AreEqual(expectedCharacteristic, characteristic);
+            Assert.AreEqual(expectedCharacteristic, subtypeHook);
         }
 
         [TestMethod]
@@ -132,6 +142,69 @@ namespace RandomTablesTests.WorldHooks
             var expectedCharacteristic = "Historical";
 
             Assert.AreEqual(expectedCharacteristic, characteristic);
+        }
+
+
+        private IntervalTree<int, IFactory> worldHookFactoryTable = new IntervalTree<int, IFactory>()
+        {
+            {1, 24, new SpikeClimateOrLandformFactory() },
+            {25, 34, new SpikeSitesOfInterestFactory() }
+        };
+
+        private IntervalTree<int, IWorldHookSubtype> worldHookSubtypesTable = new IntervalTree<int, IWorldHookSubtype>()
+        {
+            {1, 24, new SpikeClimateOrLandformFactory().Get() },
+            {25, 34, new SpikeSitesOfInterestFactory().Get() }
+        };
+
+        public int GetResult()
+        {
+            var seed = Guid.NewGuid().GetHashCode();
+            return new Random(seed).Next(1, 35);
+        }
+
+        [TestMethod]
+        public void AUseFactoryTable()
+        {
+            var result = GetResult();
+
+            var worldHookFactory = worldHookFactoryTable.Query(result).ToList().FirstOrDefault();
+            var hookSubtype = worldHookFactory.Get();
+            var hookType = hookSubtype.GetHook();
+
+            Assert.AreEqual(hookType, "");
+        }
+
+        [TestMethod]
+        public void AUseSubtypeTable()
+        {
+            var result = GetResult();
+
+            var worldHooks = worldHookSubtypesTable.Query(result).ToList().FirstOrDefault();
+            var hookType = worldHooks.GetHook();
+
+            Assert.AreEqual(hookType, "");
+        }
+    }
+
+    public class SpikeClimateOrLandformFactory : IFactory
+    {
+        public IWorldHookSubtype Get()
+        {
+            var d8Seed = Guid.NewGuid().GetHashCode();
+            var d6Seed = Guid.NewGuid().GetHashCode();
+
+            return new ClimateOrLandform(d8Seed, d6Seed);
+        }
+    }
+
+    public class SpikeSitesOfInterestFactory : IFactory
+    {
+        public IWorldHookSubtype Get()
+        {
+            var d8Seed = Guid.NewGuid().GetHashCode();
+
+            return new SitesOfInterest(d8Seed);
         }
     }
 }
