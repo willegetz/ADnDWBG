@@ -1,11 +1,12 @@
 ﻿using DiceTypes.DieTypes;
+using DiceTypes.Interfaces;
 using System.Collections.Generic;
 
 namespace RandomTables.WorldHooks
 {
     public class SitesOfInterestSubtype
     {
-        private D8 _d8;
+        private IDie _d8;
 
         private Dictionary<int, string> sitesOfInterest = new Dictionary<int, string>()
         {

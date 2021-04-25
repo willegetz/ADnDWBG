@@ -34,7 +34,7 @@ namespace RandomTables.WorldHooks
 
         public int RollDice()
         {
-            return _percentileDice.RollDice();
+            return _percentileDice.RollDie();
         }
 
         public string LookupType(int rollResult)

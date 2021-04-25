@@ -162,6 +162,7 @@ namespace RandomTablesTests.WorldHooks
         }
 
         [TestMethod]
+        [Ignore("Experimenting with factory")]
         public void AUseFactoryTable()
         {
             var result = GetResult();
@@ -174,6 +175,7 @@ namespace RandomTablesTests.WorldHooks
         }
 
         [TestMethod]
+        [Ignore("Experimenting with factory")]
         public void AUseSubtypeTable()
         {
             var result = GetResult();
