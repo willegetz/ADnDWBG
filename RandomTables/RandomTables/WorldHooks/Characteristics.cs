@@ -1,4 +1,5 @@
 ﻿using DiceTypes.DieTypes.Complex;
+using DiceTypes.Interfaces;
 using IntervalTree;
 using RandomTables.Factories.WorldHooks;
 using RandomTables.Interfaces.WorldHooks;
@@ -27,9 +28,14 @@ namespace RandomTables.WorldHooks
             {25, 34, SitesOfInterestFactory.Get }
         };
 
-        public Characteristics(int tensSeed, int onesSeed)
+        public Characteristics()
         {
-            _percentileDice = new PercentileDice0and0(tensSeed, onesSeed);
+            _percentileDice = new PercentileDice0and0();
+        }
+
+        public Characteristics(ISeedGenerator seedGenerator)
+        {
+            _percentileDice = new PercentileDice0and0(seedGenerator);
         }
 
         public int RollDice()

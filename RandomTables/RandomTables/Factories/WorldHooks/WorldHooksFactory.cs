@@ -1,5 +1,4 @@
 ﻿using RandomTables.WorldHooks;
-using System;
 
 namespace RandomTables.Factories.WorldHooks
 {
@@ -7,10 +6,7 @@ namespace RandomTables.Factories.WorldHooks
     {
         public static Characteristics Get()
         {
-            var tensSeed = Guid.NewGuid().GetHashCode();
-            var onesSeed = Guid.NewGuid().GetHashCode();
-
-            return new Characteristics(tensSeed, onesSeed);
+            return new Characteristics();
         }
     }
 }

@@ -128,7 +128,7 @@ Subtype: Forest";
             // What is the nature of a World Hook Characteristic?
             // It provides a subtype based on a range of values.
 
-            var characteristics = new Characteristics(d10SeedGenerates0, d10SeedGenerates1);
+            var characteristics = new Characteristics();
             var characteristic = characteristics.GetCharacteristic();
 
             // Forest needs to be 5

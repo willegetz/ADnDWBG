@@ -1,13 +1,7 @@
-﻿using DiceTypes.DieTypes.Complex;
-using DiceTypes.Interfaces;
-using IntervalTree;
+﻿using DiceTypes.Interfaces;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
-using RandomTables.WorldHooks;
 using RandomTables.WorldHooks.Types;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 
 namespace RandomTablesTests.FactoryTests
 {
