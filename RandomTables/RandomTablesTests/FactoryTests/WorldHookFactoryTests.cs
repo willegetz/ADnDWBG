@@ -54,17 +54,11 @@ namespace RandomTablesTests.FactoryTests
         [TestMethod]
         public void ReturnsForestWhenRun()
         {
-            //var mockDie = new Mock<IDie>();
-            //mockDie.Setup(x => x.RollDie()).Throws(new Exception("I am a mock"));
-
             var mockSeedGenerator = new Mock<ISeedGenerator>();
             mockSeedGenerator.SetupSequence(x => x.GetRandomSeed())
                           .Returns(13)
                           .Returns(14);
 
-            var d8SeedGenerates5 = 13;
-            var d6SeedGenerates1 = 14;
-            
             var climateOrLandform = new ClimateOrLandform(mockSeedGenerator.Object);
             var worldHook = climateOrLandform.GetHook();
 
@@ -112,7 +106,7 @@ Subtype: Forest";
             var characteristic = characteristics.GetCharacteristic();
 
             // Forest needs to be 5
-            var climateOrLandforms = new ClimateOrLandformSubtype(d8SeedGenerates5, d6SeedGenerates1);
+            var climateOrLandforms = new ClimateOrLandformSubtype();
             var characteristicSubtype = climateOrLandforms.GetCharacteristicSubtype();
 
             var worldHook = $@"Characteristic: {characteristic}
@@ -126,7 +120,7 @@ Subtype: {characteristicSubtype}";
             var d8SeedGenerates5 = 13;
             var d6SeedGenerates1 = 14;
 
-            var climateOrLandforms = new ClimateOrLandformSubtype(d8SeedGenerates5, d6SeedGenerates1);
+            var climateOrLandforms = new ClimateOrLandformSubtype();
             var characteristicSubtype = climateOrLandforms.GetCharacteristicSubtype();
 
             var worldHook = $@"Characteristic: Climate or Landform
@@ -159,7 +153,7 @@ Subtype: {characteristicSubtype}";
         string GetCharacteristicSubtype();
     }
 
-    public class SpikeClimateOrLandforms: IWorldHookSubtypes
+    public class SpikeClimateOrLandforms : IWorldHookSubtypes
     {
         private D16 _d16;
 

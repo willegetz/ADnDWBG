@@ -1,6 +1,4 @@
-﻿using DiceTypes;
-using DiceTypes.DieTypes;
-using DiceTypes.DieTypes.Complex;
+﻿using DiceTypes.DieTypes.Complex;
 using DiceTypes.Interfaces;
 using System.Collections.Generic;
 
@@ -30,11 +28,9 @@ namespace RandomTables.WorldHooks
             {16, "Weather" }
         };
 
-        // TODO: 3. The seeding factory comes into the constructor
-        public ClimateOrLandformSubtype(int d8seed, int d6seed)
+        public ClimateOrLandformSubtype()
         {
-            // TODO 4. Then it is passed to the die
-            
+            _d16 = new D16();
         }
 
         public ClimateOrLandformSubtype(ISeedGenerator seedGenerator)
