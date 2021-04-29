@@ -3,7 +3,7 @@ using System.Linq;
 
 namespace RandomTables.TestHelpers
 {
-    public class GetSeedForValue
+    public class SeedFinder
     {
         public int GetSeed(int inclusiveLowerBound, int exclusiveUpperBound, int desiredResult)
         {

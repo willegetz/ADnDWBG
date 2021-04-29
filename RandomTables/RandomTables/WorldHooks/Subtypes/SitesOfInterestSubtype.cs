@@ -20,9 +20,14 @@ namespace RandomTables.WorldHooks
             {8, "Wilderness" }
         };
 
-        public SitesOfInterestSubtype(int d8seed)
+        public SitesOfInterestSubtype()
         {
-            _d8 = new D8(d8seed);
+            _d8 = new D8();
+        }
+
+        public SitesOfInterestSubtype(ISeedGenerator seedGenerator)
+        {
+            _d8 = new D8(seedGenerator);
         }
 
         public int RollDie()

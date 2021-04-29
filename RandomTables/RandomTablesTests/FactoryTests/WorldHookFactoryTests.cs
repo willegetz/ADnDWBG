@@ -17,10 +17,24 @@ namespace RandomTablesTests.FactoryTests
                           .Returns(14);
 
             var climateOrLandform = new ClimateOrLandform(mockSeedGenerator.Object);
-            var worldHook = climateOrLandform.Subtype;
+            var subtype = climateOrLandform.Subtype;
 
-            var expectedHook = "Forest";
-            Assert.AreEqual(expectedHook, worldHook);
+            var expectedSubtype = "Forest";
+            Assert.AreEqual(expectedSubtype, subtype);
+        }
+
+        [TestMethod]
+        public void ReturnsRuinsWhenRun()
+        {
+            var mockSeedGenerator = new Mock<ISeedGenerator>();
+            mockSeedGenerator.Setup(x => x.GetRandomSeed())
+                          .Returns(0);
+
+            var sitesOfInterest = new SitesOfInterest(mockSeedGenerator.Object);
+            var subtype = sitesOfInterest.Subtype;
+
+            var expectedSubtype = "Ruins";
+            Assert.AreEqual(expectedSubtype, subtype);
         }
     }
 }

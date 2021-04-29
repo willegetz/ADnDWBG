@@ -1,4 +1,5 @@
-﻿using RandomTables.Interfaces.WorldHooks;
+﻿using DiceTypes.Interfaces;
+using RandomTables.Interfaces.WorldHooks;
 
 namespace RandomTables.WorldHooks.Types
 {
@@ -6,11 +7,18 @@ namespace RandomTables.WorldHooks.Types
     {
         public string CharacteristicType { get { return "Sites of Interest"; } }
 
+        public string Subtype { get { return _subtype.GetCharacteristicSubtype(); } }
+
         private SitesOfInterestSubtype _subtype;
 
-        public SitesOfInterest(int d8Seed)
+        public SitesOfInterest()
         {
-            _subtype = new SitesOfInterestSubtype(d8Seed);
+            _subtype = new SitesOfInterestSubtype();
+        }
+
+        public SitesOfInterest(ISeedGenerator seedGenerator)
+        {
+            _subtype = new SitesOfInterestSubtype(seedGenerator);
         }
 
         public string GetHook()

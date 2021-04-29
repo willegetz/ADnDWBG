@@ -7,9 +7,7 @@ namespace RandomTables.Factories.WorldHooks
     {
         public static SitesOfInterest Get()
         {
-            var d8Seed = Guid.NewGuid().GetHashCode();
-
-            return new SitesOfInterest(d8Seed);
+            return new SitesOfInterest();
         }
     }
 }

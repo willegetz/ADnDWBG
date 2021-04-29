@@ -71,7 +71,7 @@
     <Compile Include="ExploratoryTests.cs" />
     <Compile Include="FactoryTests\WorldHookFactoryTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="TestHelpers\GetSeedForValue.cs" />
+    <Compile Include="TestHelpers\SeedFinder.cs" />
     <Compile Include="WorldHooks\CharacteristicsTests.cs" />
   </ItemGroup>
   <ItemGroup>
