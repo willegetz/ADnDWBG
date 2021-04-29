@@ -35,11 +35,11 @@ namespace RandomTablesTests.WorldHooks
                           .Returns(_seedGenerates1);
 
             var characteristics = new Characteristics(mockSeedGenerator.Object);
-            var worldHook = characteristics.GetWorldHook().HookType;
+            var characteristic = characteristics.GetWorldHook().CharacteristicType;
 
             var expectedCharacteristic = "Climate or Landform";
 
-            Assert.AreEqual(expectedCharacteristic, worldHook);
+            Assert.AreEqual(expectedCharacteristic, characteristic);
         }
 
         [TestMethod]
@@ -51,7 +51,7 @@ namespace RandomTablesTests.WorldHooks
                           .Returns(_seedGenerates4);
 
             var characteristics = new Characteristics(mockSeedGenerator.Object);
-            var characteristic = characteristics.GetCharacteristic();
+            var characteristic = characteristics.GetWorldHook().CharacteristicType;
 
             var expectedCharacteristic = "Climate or Landform";
 
@@ -67,7 +67,7 @@ namespace RandomTablesTests.WorldHooks
                           .Returns(_seedGenerates5);
 
             var characteristics = new Characteristics(mockSeedGenerator.Object);
-            var characteristic = characteristics.GetCharacteristic();
+            var characteristic = characteristics.GetWorldHook().CharacteristicType;
 
             var expectedCharacteristic = "Sites of Interest";
 
@@ -83,7 +83,7 @@ namespace RandomTablesTests.WorldHooks
                           .Returns(_seedGenerates4);
 
             var characteristics = new Characteristics(mockSeedGenerator.Object);
-            var characteristic = characteristics.GetCharacteristic();
+            var characteristic = characteristics.GetWorldHook().CharacteristicType;
 
             var expectedCharacteristic = "Sites of Interest";
 

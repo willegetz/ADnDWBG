@@ -2,7 +2,7 @@
 {
     public interface IWorldHookSubtype
     {
-        string HookType { get; }
+        string CharacteristicType { get; }
         string GetHook();
     }
 }

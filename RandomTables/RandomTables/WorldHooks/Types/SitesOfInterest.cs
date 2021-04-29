@@ -4,7 +4,7 @@ namespace RandomTables.WorldHooks.Types
 {
     public class SitesOfInterest : IWorldHookSubtype
     {
-        public string HookType { get { return "Sites of Interest"; } }
+        public string CharacteristicType { get { return "Sites of Interest"; } }
 
         private SitesOfInterestSubtype _subtype;
 
@@ -17,7 +17,7 @@ namespace RandomTables.WorldHooks.Types
         {
             var subtype = _subtype.GetCharacteristicSubtype();
 
-            return $@"Characteristic: {HookType}
+            return $@"Characteristic: {CharacteristicType}
 Subtype: {subtype}";
         }
     }
