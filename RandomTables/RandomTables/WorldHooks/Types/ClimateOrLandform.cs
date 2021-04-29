@@ -6,6 +6,7 @@ namespace RandomTables.WorldHooks.Types
     public class ClimateOrLandform : IWorldHookSubtype
     {
         public string HookType { get { return "Climate or Landform"; } }
+
         private ClimateOrLandformSubtype _subtype;
 
         public ClimateOrLandform()

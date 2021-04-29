@@ -70,12 +70,12 @@ namespace RandomTables.WorldHooks
             return characteristic;
         }
 
-        public string GetWorldHook()
+        public IWorldHookSubtype GetWorldHook()
         {
             var rollResult = RollDice();
             var worldHook = GetSubtype(rollResult);
 
-            return worldHook().GetHook();
+            return worldHook();
         }
     }
 }

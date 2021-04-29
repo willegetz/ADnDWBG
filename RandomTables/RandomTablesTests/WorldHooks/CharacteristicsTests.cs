@@ -35,13 +35,11 @@ namespace RandomTablesTests.WorldHooks
                           .Returns(_seedGenerates1);
 
             var characteristics = new Characteristics(mockSeedGenerator.Object);
-            var getSubtypeFunction = characteristics.GetSubtype(1);
-
-            var subtypeHook = getSubtypeFunction().HookType;
+            var worldHook = characteristics.GetWorldHook().HookType;
 
             var expectedCharacteristic = "Climate or Landform";
 
-            Assert.AreEqual(expectedCharacteristic, subtypeHook);
+            Assert.AreEqual(expectedCharacteristic, worldHook);
         }
 
         [TestMethod]
