@@ -53,7 +53,7 @@ namespace RandomTablesTests
             {25, 34, new SpikeSitesOfInterestFactory() }
         };
 
-        private IntervalTree<int, IWorldHookSubtype> worldHookSubtypesTable = new IntervalTree<int, IWorldHookSubtype>()
+        private IntervalTree<int, IWorldHook> worldHookSubtypesTable = new IntervalTree<int, IWorldHook>()
         {
             {1, 24, new SpikeClimateOrLandformFactory().Get() },
             {25, 34, new SpikeSitesOfInterestFactory().Get() }
@@ -158,7 +158,7 @@ Subtype: {characteristicSubtype}";
 
     public class SpikeClimateOrLandformFactory : IFactory
     {
-        public IWorldHookSubtype Get()
+        public IWorldHook Get()
         {
             var d8Seed = Guid.NewGuid().GetHashCode();
             var d6Seed = Guid.NewGuid().GetHashCode();
@@ -169,7 +169,7 @@ Subtype: {characteristicSubtype}";
 
     public class SpikeSitesOfInterestFactory : IFactory
     {
-        public IWorldHookSubtype Get()
+        public IWorldHook Get()
         {
             var d8Seed = Guid.NewGuid().GetHashCode();
 

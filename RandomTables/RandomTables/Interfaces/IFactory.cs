@@ -4,6 +4,6 @@ namespace RandomTables.Interfaces
 {
     public interface IFactory
     {
-        IWorldHookSubtype Get();
+        IWorldHook Get();
     }
 }

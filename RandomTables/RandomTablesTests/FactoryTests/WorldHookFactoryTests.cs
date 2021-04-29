@@ -17,10 +17,9 @@ namespace RandomTablesTests.FactoryTests
                           .Returns(14);
 
             var climateOrLandform = new ClimateOrLandform(mockSeedGenerator.Object);
-            var worldHook = climateOrLandform.GetHook();
+            var worldHook = climateOrLandform.Subtype.GetCharacteristicSubtype();
 
-            var expectedHook = @"Characteristic: Climate or Landform
-Subtype: Forest";
+            var expectedHook = "Forest";
             Assert.AreEqual(expectedHook, worldHook);
         }
     }

@@ -22,7 +22,7 @@ namespace RandomTables.WorldHooks
                 {0, 0, "Historical" }
             };
 
-        private IntervalTree<int, Func<IWorldHookSubtype>> worldHookTable = new IntervalTree<int, Func<IWorldHookSubtype>>()
+        private IntervalTree<int, Func<IWorldHook>> worldHookTable = new IntervalTree<int, Func<IWorldHook>>()
         {
             {1, 24, ClimateOrLandformFactory.Get },
             {25, 34, SitesOfInterestFactory.Get }
@@ -52,7 +52,7 @@ namespace RandomTables.WorldHooks
             return characteristic;
         }
 
-        public Func<IWorldHookSubtype> GetSubtype(int rollResult)
+        public Func<IWorldHook> GetSubtype(int rollResult)
         {
             var subtype = worldHookTable.Query(rollResult)
                                         .ToList()
@@ -70,7 +70,7 @@ namespace RandomTables.WorldHooks
             return characteristic;
         }
 
-        public IWorldHookSubtype GetWorldHook()
+        public IWorldHook GetWorldHook()
         {
             var rollResult = RollDice();
             var worldHook = GetSubtype(rollResult);

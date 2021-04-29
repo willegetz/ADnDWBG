@@ -2,7 +2,7 @@
 
 namespace RandomTables.WorldHooks.Types
 {
-    public class SitesOfInterest : IWorldHookSubtype
+    public class SitesOfInterest : IWorldHook
     {
         public string CharacteristicType { get { return "Sites of Interest"; } }
 

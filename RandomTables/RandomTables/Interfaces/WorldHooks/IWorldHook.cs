@@ -1,6 +1,6 @@
 ﻿namespace RandomTables.Interfaces.WorldHooks
 {
-    public interface IWorldHookSubtype
+    public interface IWorldHook
     {
         string CharacteristicType { get; }
         string GetHook();

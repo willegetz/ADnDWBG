@@ -48,7 +48,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Interfaces\IFactory.cs" />
-    <Compile Include="Interfaces\WorldHooks\IWorldHookSubtype.cs" />
+    <Compile Include="Interfaces\WorldHooks\IWorldHook.cs" />
     <Compile Include="Factories\WorldHooks\ClimateOrLandformFactory.cs" />
     <Compile Include="Factories\WorldHooks\SitesOfInterestFactory.cs" />
     <Compile Include="Factories\WorldHooks\WorldHooksFactory.cs" />
