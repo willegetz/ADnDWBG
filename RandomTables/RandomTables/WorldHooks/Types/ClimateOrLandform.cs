@@ -7,7 +7,7 @@ namespace RandomTables.WorldHooks.Types
     {
         public string CharacteristicType { get { return "Climate or Landform"; } }
 
-        public ClimateOrLandformSubtype Subtype { get; set; }
+        public string Subtype { get { return _subtype.GetCharacteristicSubtype(); } }
 
         private ClimateOrLandformSubtype _subtype;
 
@@ -18,15 +18,13 @@ namespace RandomTables.WorldHooks.Types
 
         public ClimateOrLandform(ISeedGenerator seedGenerator)
         {
-            Subtype = new ClimateOrLandformSubtype(seedGenerator);
+            _subtype = new ClimateOrLandformSubtype(seedGenerator);
         }
 
         public string GetHook()
         {
-            var subtype = Subtype.GetCharacteristicSubtype();
-
             return $@"Characteristic: {CharacteristicType}
-Subtype: {subtype}";
+Subtype: {Subtype}";
         }
     }
 }
