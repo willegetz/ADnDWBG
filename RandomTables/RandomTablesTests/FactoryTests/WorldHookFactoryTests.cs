@@ -1,6 +1,8 @@
-﻿using DiceTypes.DieTypes;
+﻿using DiceTypes.DieTypes.Complex;
+using DiceTypes.Interfaces;
 using IntervalTree;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Moq;
 using RandomTables.WorldHooks;
 using RandomTables.WorldHooks.Types;
 using System;
@@ -52,10 +54,18 @@ namespace RandomTablesTests.FactoryTests
         [TestMethod]
         public void ReturnsForestWhenRun()
         {
+            //var mockDie = new Mock<IDie>();
+            //mockDie.Setup(x => x.RollDie()).Throws(new Exception("I am a mock"));
+
+            var mockSeedGenerator = new Mock<ISeedGenerator>();
+            mockSeedGenerator.SetupSequence(x => x.GetRandomSeed())
+                          .Returns(13)
+                          .Returns(14);
+
             var d8SeedGenerates5 = 13;
             var d6SeedGenerates1 = 14;
             
-            var climateOrLandform = new ClimateOrLandform(d8SeedGenerates5, d6SeedGenerates1);
+            var climateOrLandform = new ClimateOrLandform(mockSeedGenerator.Object);
             var worldHook = climateOrLandform.GetHook();
 
             var expectedHook = @"Characteristic: Climate or Landform
@@ -64,6 +74,7 @@ Subtype: Forest";
         }
 
         [TestMethod]
+        [Ignore("Part of exploratory testing")]
         public void GetWorldHookTest()
         {
             var tableResult = simpleFuncTable.Query(1).FirstOrDefault();
@@ -71,10 +82,11 @@ Subtype: Forest";
 
             var expectedHook = @"Characteristic: Climate or Landform
 Subtype: Forest";
-            Assert.AreEqual(expectedHook, worldHook);
+            Assert.AreEqual(expectedHook, tableResult);
         }
 
         [TestMethod]
+        [Ignore("Part of exploratory testing")]
         public void ClimateOrLandformsFactoryTest()
         {
             var tableResult = factoryTable.Query(1).FirstOrDefault();

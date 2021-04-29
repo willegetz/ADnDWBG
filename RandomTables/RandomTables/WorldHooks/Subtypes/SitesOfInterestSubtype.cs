@@ -1,4 +1,4 @@
-﻿using DiceTypes.DieTypes;
+﻿using DiceTypes.DieTypes.Basic;
 using DiceTypes.Interfaces;
 using System.Collections.Generic;
 

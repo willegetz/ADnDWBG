@@ -11,6 +11,12 @@ namespace RandomTablesTests
     [TestClass]
     public class ExploratoryTests
     {
+        // We are interested in the results of our random table lookup, not necessarily
+        // in how the dice generate their results.
+        // Right now we have set the seed values of the dice in order to produce the correct
+        // result used to lookup the values on the random table. This depends on the dice
+        // rolls, so we have to control the dice.
+        // However, the dice have been tested in their own solution
 
         private IntervalTree<int, IFactory> worldHookFactoryTable = new IntervalTree<int, IFactory>()
         {
@@ -26,8 +32,11 @@ namespace RandomTablesTests
 
         public int GetResult()
         {
-            var seed = Guid.NewGuid().GetHashCode();
-            return new Random(seed).Next(1, 35);
+            int seed = Guid.NewGuid().GetHashCode();
+            Random random = new Random(seed);
+            int randomValue = random.Next(1, 35);
+
+            return randomValue;
         }
 
         [TestMethod]

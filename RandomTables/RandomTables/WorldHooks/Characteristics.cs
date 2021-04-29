@@ -1,4 +1,4 @@
-﻿using DiceTypes.DieTypes;
+﻿using DiceTypes.DieTypes.Complex;
 using IntervalTree;
 using RandomTables.Factories.WorldHooks;
 using RandomTables.Interfaces.WorldHooks;
