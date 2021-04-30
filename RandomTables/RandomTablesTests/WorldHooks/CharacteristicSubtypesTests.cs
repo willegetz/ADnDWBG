@@ -66,5 +66,19 @@ namespace RandomTablesTests.WorldHooks
             var expectedSubtype = "Psionics";
             Assert.AreEqual(expectedSubtype, subtype);
         }
+
+        [TestMethod]
+        public void ReturnsArtifactWhenRolled()
+        {
+            var mockSeedGenerator = new Mock<ISeedGenerator>();
+            mockSeedGenerator.Setup(x => x.GetRandomSeed())
+                             .Returns(1);
+
+            var historical = new Historical(mockSeedGenerator.Object);
+            var subtype = historical.Subtype;
+
+            var expectedSubtype = "Artifact";
+            Assert.AreEqual(expectedSubtype, subtype);
+        }
     }
 }
