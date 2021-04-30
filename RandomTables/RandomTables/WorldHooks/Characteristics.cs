@@ -12,16 +12,6 @@ namespace RandomTables.WorldHooks
     {
         private PercentileDice0and0 _percentileDice;
 
-        private IntervalTree<int, string> characteristicsTable = new IntervalTree<int, string>()
-            {
-                {1, 24, "Climate or Landform" },
-                {25, 34, "Sites of Interest" },
-                {35, 60, "Cultures" },
-                {61, 85, "Situation" },
-                {86, 99, "Historical" },
-                {0, 0, "Historical" }
-            };
-
         private IntervalTree<int, Func<IWorldHook>> worldHookTable = new IntervalTree<int, Func<IWorldHook>>()
         {
             {1, 24, ClimateOrLandformFactory.Get },
@@ -42,20 +32,6 @@ namespace RandomTables.WorldHooks
             _percentileDice = new PercentileDice0and0(seedGenerator);
         }
 
-        public int RollDice()
-        {
-            return _percentileDice.RollDie();
-        }
-
-        public string LookupType(int rollResult)
-        {
-            var characteristic = characteristicsTable.Query(rollResult)
-                                            .ToList()
-                                            .Select(x => x)
-                                            .FirstOrDefault();
-            return characteristic;
-        }
-
         public Func<IWorldHook> GetSubtype(int rollResult)
         {
             var subtype = worldHookTable.Query(rollResult)
@@ -66,17 +42,9 @@ namespace RandomTables.WorldHooks
             return subtype;
         }
 
-        public string GetCharacteristic()
-        {
-            var rollResult = RollDice();
-            var characteristic = LookupType(rollResult);
-
-            return characteristic;
-        }
-
         public IWorldHook GetWorldHook()
         {
-            var rollResult = RollDice();
+            var rollResult = _percentileDice.RollDie();
             var worldHook = GetSubtype(rollResult);
 
             return worldHook();
