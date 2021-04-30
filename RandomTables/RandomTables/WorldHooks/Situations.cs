@@ -29,7 +29,7 @@ namespace RandomTables.WorldHooks
 
         public Situations(int d8seed, int d6seed)
         {
-            _d16 = new D16(d8seed, d6seed);
+            _d16 = new D16();
         }
 
         public int RollDie()

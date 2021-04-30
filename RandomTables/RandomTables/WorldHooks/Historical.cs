@@ -21,7 +21,7 @@ namespace RandomTables.WorldHooks
 
         public Historical(int d8seed)
         {
-            _d8 = new D8(d8seed);
+            _d8 = new D8();
         }
 
         public int RollDie()
