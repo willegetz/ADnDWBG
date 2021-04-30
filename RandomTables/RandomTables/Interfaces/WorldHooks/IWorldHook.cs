@@ -4,7 +4,6 @@
     {
         string CharacteristicType { get; }
         string Subtype { get; }
-
         string GetHook();
     }
 }

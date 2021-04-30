@@ -35,15 +35,10 @@ namespace RandomTables.WorldHooks
             return _d8.RollDie();
         }
 
-        public string LookupSubtype(int rollResult)
-        {
-            return sitesOfInterest[rollResult];
-        }
-
         public string GetCharacteristicSubtype()
         {
             var rollResult = RollDie();
-            var subtype = LookupSubtype(rollResult);
+            var subtype = sitesOfInterest[rollResult];
 
             return subtype;
         }

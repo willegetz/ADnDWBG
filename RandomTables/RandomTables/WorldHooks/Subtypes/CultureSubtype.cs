@@ -6,7 +6,7 @@ namespace RandomTables.WorldHooks.Subtypes
 {
     public class CultureSubtype
     {
-        private D12 _d12;
+        private IDie _d12;
 
         private Dictionary<int, string> cultures = new Dictionary<int, string>()
         {
@@ -39,15 +39,10 @@ namespace RandomTables.WorldHooks.Subtypes
             return _d12.RollDie();
         }
 
-        public string LookupSubtype(int rollResult)
-        {
-            return cultures[rollResult];
-        }
-
         public string GetCharacteristicSubtype()
         {
             var rollResult = RollDie();
-            var subtype = LookupSubtype(rollResult);
+            var subtype = cultures[rollResult];
 
             return subtype;
         }

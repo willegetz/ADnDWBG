@@ -2,9 +2,9 @@
 using DiceTypes.Interfaces;
 using System.Collections.Generic;
 
-namespace RandomTables.WorldHooks
+namespace RandomTables.WorldHooks.Subtypes
 {
-    public class ClimateOrLandformSubtype
+    public class ClimateOrLandformSubtype : BaseSubtype
     {
         private IDie _d16;
 
@@ -28,30 +28,25 @@ namespace RandomTables.WorldHooks
             {16, "Weather" }
         };
 
-        public ClimateOrLandformSubtype()
+        public ClimateOrLandformSubtype() : base(new D16())
         {
             _d16 = new D16();
         }
 
-        public ClimateOrLandformSubtype(ISeedGenerator seedGenerator)
+        public ClimateOrLandformSubtype(ISeedGenerator seedGenerator) : base(new D16(seedGenerator))
         {
             _d16 = new D16(seedGenerator);
         }
 
         public int RollDie()
         {
-            return _d16.RollDie();
-        }
-
-        public string LookupSubtype(int rollResult)
-        {
-            return climateOrLandforms[rollResult];
+            return base.RollDie();
         }
 
         public string GetCharacteristicSubtype()
         {
             var rollResult = RollDie();
-            var subtype = LookupSubtype(rollResult);
+            var subtype = climateOrLandforms[rollResult];
 
             return subtype;
         }
