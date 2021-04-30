@@ -1,13 +1,14 @@
 ﻿using DiceTypes.Interfaces;
+using RandomTables.Interfaces.WorldHooks;
 using System.Collections.Generic;
 
 namespace RandomTables.WorldHooks.Subtypes
 {
-    public class BaseSubtype
+    public class BaseSubtype : IWorldHookSubtype
     {
         private IDie die;
 
-        public Dictionary<int, string> subtypeLookup;
+        public Dictionary<int, string> SubtypeLookup { get; set; }
 
         public BaseSubtype(IDie die)
         {
@@ -22,7 +23,7 @@ namespace RandomTables.WorldHooks.Subtypes
         public string GetCharacteristicSubtype()
         {
             var rollResult = RollDie();
-            var subtype = subtypeLookup[rollResult];
+            var subtype = SubtypeLookup[rollResult];
 
             return subtype;
         }

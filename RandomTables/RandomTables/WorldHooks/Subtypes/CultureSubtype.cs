@@ -24,12 +24,12 @@ namespace RandomTables.WorldHooks.Subtypes
 
         public CultureSubtype(): base(new D12())
         {
-            base.subtypeLookup = cultures;
+            base.SubtypeLookup = cultures;
         }
 
         public CultureSubtype(ISeedGenerator seedGenerator) : base(new D12(seedGenerator))
         {
-            base.subtypeLookup = cultures;
+            base.SubtypeLookup = cultures;
         }
     }
 }

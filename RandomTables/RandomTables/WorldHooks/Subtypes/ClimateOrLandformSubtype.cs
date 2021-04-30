@@ -28,12 +28,12 @@ namespace RandomTables.WorldHooks.Subtypes
 
         public ClimateOrLandformSubtype() : base(new D16())
         {
-            base.subtypeLookup = climateOrLandforms;
+            base.SubtypeLookup = climateOrLandforms;
         }
 
         public ClimateOrLandformSubtype(ISeedGenerator seedGenerator) : base(new D16(seedGenerator))
         {
-            base.subtypeLookup = climateOrLandforms;
+            base.SubtypeLookup = climateOrLandforms;
         }
     }
 }

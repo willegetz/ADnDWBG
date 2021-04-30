@@ -1,5 +1,4 @@
 ﻿using RandomTables.Interfaces.WorldHooks;
-using RandomTables.WorldHooks.Subtypes;
 
 namespace RandomTables.WorldHooks.Types
 {
@@ -9,9 +8,9 @@ namespace RandomTables.WorldHooks.Types
 
         public string Subtype { get { return _subtype.GetCharacteristicSubtype(); } }
 
-        private ClimateOrLandformSubtype _subtype;
+        private IWorldHookSubtype _subtype;
 
-        public BaseCharacteristicType(string characteristicType, ClimateOrLandformSubtype subtype)
+        public BaseCharacteristicType(string characteristicType, IWorldHookSubtype subtype)
         {
             CharacteristicType = characteristicType;
             _subtype = subtype;

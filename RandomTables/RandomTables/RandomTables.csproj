@@ -53,6 +53,7 @@
     <Compile Include="Factories\WorldHooks\ClimateOrLandformFactory.cs" />
     <Compile Include="Factories\WorldHooks\SitesOfInterestFactory.cs" />
     <Compile Include="Factories\WorldHooks\WorldHooksFactory.cs" />
+    <Compile Include="Interfaces\WorldHooks\IWorldHookSubtype.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="WorldHooks\Characteristics.cs" />
     <Compile Include="WorldHooks\Historical.cs" />

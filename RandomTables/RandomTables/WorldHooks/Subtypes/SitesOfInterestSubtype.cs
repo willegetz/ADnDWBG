@@ -20,12 +20,12 @@ namespace RandomTables.WorldHooks.Subtypes
 
         public SitesOfInterestSubtype() : base(new D8())
         {
-            base.subtypeLookup = sitesOfInterest;
+            base.SubtypeLookup = sitesOfInterest;
         }
 
         public SitesOfInterestSubtype(ISeedGenerator seedGenerator) : base(new D8(seedGenerator))
         {
-            base.subtypeLookup = sitesOfInterest;
+            base.SubtypeLookup = sitesOfInterest;
         }
     }
 }

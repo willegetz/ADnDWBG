@@ -4,7 +4,7 @@ using RandomTables.WorldHooks.Subtypes;
 
 namespace RandomTables.WorldHooks.Types
 {
-    public class SitesOfInterest : IWorldHook
+    public class SitesOfInterest : BaseCharacteristicType, IWorldHook
     {
         public string CharacteristicType { get { return "Sites of Interest"; } }
 
@@ -12,12 +12,12 @@ namespace RandomTables.WorldHooks.Types
 
         private SitesOfInterestSubtype _subtype;
 
-        public SitesOfInterest()
+        public SitesOfInterest() : base("Sites of Interest", new SitesOfInterestSubtype())
         {
             _subtype = new SitesOfInterestSubtype();
         }
 
-        public SitesOfInterest(ISeedGenerator seedGenerator)
+        public SitesOfInterest(ISeedGenerator seedGenerator): base("Sites of Interest", new SitesOfInterestSubtype(seedGenerator))
         {
             _subtype = new SitesOfInterestSubtype(seedGenerator);
         }
