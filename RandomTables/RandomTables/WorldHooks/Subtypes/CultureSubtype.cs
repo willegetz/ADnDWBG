@@ -4,10 +4,8 @@ using System.Collections.Generic;
 
 namespace RandomTables.WorldHooks.Subtypes
 {
-    public class CultureSubtype
+    public class CultureSubtype : BaseSubtype
     {
-        private IDie _d12;
-
         private Dictionary<int, string> cultures = new Dictionary<int, string>()
         {
             {1, "African" },
@@ -24,27 +22,14 @@ namespace RandomTables.WorldHooks.Subtypes
             {12, "Seafaring" }
         };
 
-        public CultureSubtype()
+        public CultureSubtype(): base(new D12())
         {
-            _d12 = new D12();
+            base.subtypeLookup = cultures;
         }
 
-        public CultureSubtype(ISeedGenerator seedGenerator)
+        public CultureSubtype(ISeedGenerator seedGenerator) : base(new D12(seedGenerator))
         {
-            _d12 = new D12(seedGenerator);
-        }
-
-        public int RollDie()
-        {
-            return _d12.RollDie();
-        }
-
-        public string GetCharacteristicSubtype()
-        {
-            var rollResult = RollDie();
-            var subtype = cultures[rollResult];
-
-            return subtype;
+            base.subtypeLookup = cultures;
         }
     }
 }
