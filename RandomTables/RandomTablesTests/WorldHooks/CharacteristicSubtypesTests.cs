@@ -1,7 +1,6 @@
 ﻿using DiceTypes.Interfaces;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
-using RandomTables.TestHelpers;
 using RandomTables.WorldHooks.Types;
 
 namespace RandomTablesTests.WorldHooks
