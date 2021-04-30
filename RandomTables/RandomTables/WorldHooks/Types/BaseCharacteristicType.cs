@@ -1,8 +1,9 @@
-﻿using RandomTables.WorldHooks.Subtypes;
+﻿using RandomTables.Interfaces.WorldHooks;
+using RandomTables.WorldHooks.Subtypes;
 
 namespace RandomTables.WorldHooks.Types
 {
-    public class BaseCharacteristicType
+    public class BaseCharacteristicType : IWorldHook
     {
         public string CharacteristicType { get; private set; }
 

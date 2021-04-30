@@ -1,10 +1,9 @@
 ﻿using DiceTypes.Interfaces;
-using RandomTables.Interfaces.WorldHooks;
 using RandomTables.WorldHooks.Subtypes;
 
 namespace RandomTables.WorldHooks.Types
 {
-    public class ClimateOrLandform : BaseCharacteristicType, IWorldHook
+    public class ClimateOrLandform : BaseCharacteristicType
     {
         public ClimateOrLandform() : base("Climate or Landform", new ClimateOrLandformSubtype())
         {
