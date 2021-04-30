@@ -6,8 +6,6 @@ namespace RandomTables.WorldHooks.Subtypes
 {
     public class ClimateOrLandformSubtype : BaseSubtype
     {
-        private IDie _d16;
-
         private Dictionary<int, string> climateOrLandforms = new Dictionary<int, string>()
         {
             {1, "Aerial" },
@@ -30,22 +28,17 @@ namespace RandomTables.WorldHooks.Subtypes
 
         public ClimateOrLandformSubtype() : base(new D16())
         {
-            _d16 = new D16();
+
         }
 
         public ClimateOrLandformSubtype(ISeedGenerator seedGenerator) : base(new D16(seedGenerator))
         {
-            _d16 = new D16(seedGenerator);
-        }
 
-        public int RollDie()
-        {
-            return base.RollDie();
         }
 
         public string GetCharacteristicSubtype()
         {
-            var rollResult = RollDie();
+            var rollResult = base.RollDie();
             var subtype = climateOrLandforms[rollResult];
 
             return subtype;
