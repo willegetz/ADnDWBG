@@ -4,28 +4,16 @@ using RandomTables.WorldHooks.Subtypes;
 
 namespace RandomTables.WorldHooks.Types
 {
-    public class ClimateOrLandform : IWorldHook
+    public class ClimateOrLandform : BaseCharacteristicType, IWorldHook
     {
-        public string CharacteristicType { get { return "Climate or Landform"; } }
-
-        public string Subtype { get { return _subtype.GetCharacteristicSubtype(); } }
-
-        private ClimateOrLandformSubtype _subtype;
-
-        public ClimateOrLandform()
+        public ClimateOrLandform() : base("Climate or Landform", new ClimateOrLandformSubtype())
         {
-            _subtype = new ClimateOrLandformSubtype();
+
         }
 
-        public ClimateOrLandform(ISeedGenerator seedGenerator)
+        public ClimateOrLandform(ISeedGenerator seedGenerator) : base("Climate or Landform", new ClimateOrLandformSubtype(seedGenerator))
         {
-            _subtype = new ClimateOrLandformSubtype(seedGenerator);
-        }
 
-        public string GetHook()
-        {
-            return $@"Characteristic: {CharacteristicType}
-Subtype: {Subtype}";
         }
     }
 }
