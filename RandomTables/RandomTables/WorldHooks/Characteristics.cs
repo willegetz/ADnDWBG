@@ -26,7 +26,8 @@ namespace RandomTables.WorldHooks
         {
             {1, 24, ClimateOrLandformFactory.Get },
             {25, 34, SitesOfInterestFactory.Get },
-            {35, 60, CulturesFactory.Get }
+            {35, 60, CulturesFactory.Get },
+            {61, 85, SituationsFactory.Get }
         };
 
         public Characteristics()

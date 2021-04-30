@@ -10,7 +10,7 @@ namespace RandomTablesTests.WorldHooks
     public class CharacteristicSubtypesTests
     {
         [TestMethod]
-        public void ReturnsForestWhenRun()
+        public void ReturnsForestWhenRolled()
         {
             var mockSeedGenerator = new Mock<ISeedGenerator>();
             mockSeedGenerator.SetupSequence(x => x.GetRandomSeed())
@@ -25,7 +25,7 @@ namespace RandomTablesTests.WorldHooks
         }
 
         [TestMethod]
-        public void ReturnsRuinsWhenRun()
+        public void ReturnsRuinsWhenRolled()
         {
             var mockSeedGenerator = new Mock<ISeedGenerator>();
             mockSeedGenerator.Setup(x => x.GetRandomSeed())
@@ -39,16 +39,31 @@ namespace RandomTablesTests.WorldHooks
         }
 
         [TestMethod]
-        public void ReturnsSeafaringWhenRun()
+        public void ReturnsSeafaringWhenRolled()
         {
             var mockSeedGenerator = new Mock<ISeedGenerator>();
             mockSeedGenerator.Setup(x => x.GetRandomSeed())
-                          .Returns(10);
+                             .Returns(10);
 
             var cultures = new Cultures(mockSeedGenerator.Object);
             var subtype = cultures.Subtype;
 
             var expectedSubtype = "Seafaring";
+            Assert.AreEqual(expectedSubtype, subtype);
+        }
+
+        [TestMethod]
+        public void ReturnsPsionicsWhenRolled()
+        {
+            var mockSeedGenerator = new Mock<ISeedGenerator>();
+            mockSeedGenerator.SetupSequence(x => x.GetRandomSeed())
+                             .Returns(3)
+                             .Returns(0);
+
+            var situations = new Situations(mockSeedGenerator.Object);
+            var subtype = situations.Subtype;
+
+            var expectedSubtype = "Psionics";
             Assert.AreEqual(expectedSubtype, subtype);
         }
     }

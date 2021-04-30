@@ -131,7 +131,7 @@ namespace RandomTablesTests.WorldHooks
                           .Returns(_seedGenerates1);
 
             var characteristics = new Characteristics(mockSeedGenerator.Object);
-            var characteristic = characteristics.GetCharacteristic();
+            var characteristic = characteristics.GetWorldHook().CharacteristicType;
 
             var expectedCharacteristic = "Situation";
 
@@ -147,7 +147,7 @@ namespace RandomTablesTests.WorldHooks
                           .Returns(_seedGenerates5);
 
             var characteristics = new Characteristics(mockSeedGenerator.Object);
-            var characteristic = characteristics.GetCharacteristic();
+            var characteristic = characteristics.GetWorldHook().CharacteristicType;
 
             var expectedCharacteristic = "Situation";
 

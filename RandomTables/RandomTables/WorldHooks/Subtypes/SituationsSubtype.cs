@@ -1,12 +1,11 @@
 ﻿using DiceTypes.DieTypes.Complex;
+using DiceTypes.Interfaces;
 using System.Collections.Generic;
 
-namespace RandomTables.WorldHooks
+namespace RandomTables.WorldHooks.Subtypes
 {
-    class Situations
+    class SituationsSubtype : BaseSubtype
     {
-        private D16 _d16;
-
         private Dictionary<int, string> situations = new Dictionary<int, string>()
         {
             {1, "Class dominance" },
@@ -27,19 +26,14 @@ namespace RandomTables.WorldHooks
             {16, "Warfare" }
         };
 
-        public Situations(int d8seed, int d6seed)
+        public SituationsSubtype() : base(new D16())
         {
-            _d16 = new D16();
+            SubtypeLookup = situations;
         }
 
-        public int RollDie()
+        public SituationsSubtype(ISeedGenerator seedGenerator) : base(new D16(seedGenerator))
         {
-            return _d16.RollDie();
-        }
-
-        public string LookupSubtype(int rollResult)
-        {
-            return situations[rollResult];
+            SubtypeLookup = situations;
         }
     }
 }

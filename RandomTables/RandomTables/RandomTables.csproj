@@ -48,6 +48,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Factories\WorldHooks\CulturesFactory.cs" />
+    <Compile Include="Factories\WorldHooks\SituationsFactory.cs" />
     <Compile Include="Interfaces\IFactory.cs" />
     <Compile Include="Interfaces\WorldHooks\IWorldHook.cs" />
     <Compile Include="Factories\WorldHooks\ClimateOrLandformFactory.cs" />
@@ -60,11 +61,12 @@
     <Compile Include="WorldHooks\Subtypes\BaseSubtype.cs" />
     <Compile Include="WorldHooks\Subtypes\SitesOfInterestSubtype.cs" />
     <Compile Include="WorldHooks\Subtypes\ClimateOrLandformSubtype.cs" />
-    <Compile Include="WorldHooks\Situations.cs" />
+    <Compile Include="WorldHooks\Subtypes\SituationsSubtype.cs" />
     <Compile Include="WorldHooks\Types\BaseCharacteristicType.cs" />
     <Compile Include="WorldHooks\Types\ClimateOrLandform.cs" />
     <Compile Include="WorldHooks\Subtypes\CultureSubtype.cs" />
     <Compile Include="WorldHooks\Types\Cultures.cs" />
+    <Compile Include="WorldHooks\Types\Situations.cs" />
     <Compile Include="WorldHooks\Types\SitesOfInterest.cs" />
   </ItemGroup>
   <ItemGroup>
