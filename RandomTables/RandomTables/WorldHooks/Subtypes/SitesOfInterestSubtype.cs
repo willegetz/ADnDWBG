@@ -2,12 +2,10 @@
 using DiceTypes.Interfaces;
 using System.Collections.Generic;
 
-namespace RandomTables.WorldHooks
+namespace RandomTables.WorldHooks.Subtypes
 {
-    public class SitesOfInterestSubtype
+    public class SitesOfInterestSubtype : BaseSubtype
     {
-        private IDie _d8;
-
         private Dictionary<int, string> sitesOfInterest = new Dictionary<int, string>()
         {
             {1, "Caverns" },
@@ -20,27 +18,14 @@ namespace RandomTables.WorldHooks
             {8, "Wilderness" }
         };
 
-        public SitesOfInterestSubtype()
+        public SitesOfInterestSubtype() : base(new D8())
         {
-            _d8 = new D8();
+            base.subtypeLookup = sitesOfInterest;
         }
 
-        public SitesOfInterestSubtype(ISeedGenerator seedGenerator)
+        public SitesOfInterestSubtype(ISeedGenerator seedGenerator) : base(new D8(seedGenerator))
         {
-            _d8 = new D8(seedGenerator);
-        }
-
-        public int RollDie()
-        {
-            return _d8.RollDie();
-        }
-
-        public string GetCharacteristicSubtype()
-        {
-            var rollResult = RollDie();
-            var subtype = sitesOfInterest[rollResult];
-
-            return subtype;
+            base.subtypeLookup = sitesOfInterest;
         }
     }
 }
