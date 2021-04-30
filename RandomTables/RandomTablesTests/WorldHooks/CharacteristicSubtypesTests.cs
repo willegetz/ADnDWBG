@@ -3,10 +3,10 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
 using RandomTables.WorldHooks.Types;
 
-namespace RandomTablesTests.FactoryTests
+namespace RandomTablesTests.WorldHooks
 {
     [TestClass]
-    public class WorldHookFactoryTests
+    public class CharacteristicSubtypesTests
     {
         [TestMethod]
         public void ReturnsForestWhenRun()
