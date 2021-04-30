@@ -1,4 +1,5 @@
 ﻿using DiceTypes.DieTypes.Basic;
+using DiceTypes.Interfaces;
 using System.Collections.Generic;
 
 namespace RandomTables.WorldHooks.Subtypes
@@ -23,9 +24,14 @@ namespace RandomTables.WorldHooks.Subtypes
             {12, "Seafaring" }
         };
 
-        public CultureSubtype(int d12Seed)
+        public CultureSubtype()
         {
-            _d12 = new D12(d12Seed);
+            _d12 = new D12();
+        }
+
+        public CultureSubtype(ISeedGenerator seedGenerator)
+        {
+            _d12 = new D12(seedGenerator);
         }
 
         public int RollDie()
@@ -36,6 +42,14 @@ namespace RandomTables.WorldHooks.Subtypes
         public string LookupSubtype(int rollResult)
         {
             return cultures[rollResult];
+        }
+
+        public string GetCharacteristicSubtype()
+        {
+            var rollResult = RollDie();
+            var subtype = LookupSubtype(rollResult);
+
+            return subtype;
         }
     }
 }

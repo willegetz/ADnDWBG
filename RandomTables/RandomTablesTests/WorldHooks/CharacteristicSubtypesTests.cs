@@ -1,6 +1,7 @@
 ﻿using DiceTypes.Interfaces;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
+using RandomTables.TestHelpers;
 using RandomTables.WorldHooks.Types;
 
 namespace RandomTablesTests.WorldHooks
@@ -34,6 +35,20 @@ namespace RandomTablesTests.WorldHooks
             var subtype = sitesOfInterest.Subtype;
 
             var expectedSubtype = "Ruins";
+            Assert.AreEqual(expectedSubtype, subtype);
+        }
+
+        [TestMethod]
+        public void ReturnsSeafaringWhenRun()
+        {
+            var mockSeedGenerator = new Mock<ISeedGenerator>();
+            mockSeedGenerator.Setup(x => x.GetRandomSeed())
+                          .Returns(10);
+
+            var cultures = new Cultures(mockSeedGenerator.Object);
+            var subtype = cultures.Subtype;
+
+            var expectedSubtype = "Seafaring";
             Assert.AreEqual(expectedSubtype, subtype);
         }
     }
