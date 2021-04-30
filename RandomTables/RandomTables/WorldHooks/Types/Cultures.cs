@@ -1,31 +1,18 @@
 ﻿using DiceTypes.Interfaces;
-using RandomTables.Interfaces.WorldHooks;
 using RandomTables.WorldHooks.Subtypes;
 
 namespace RandomTables.WorldHooks.Types
 {
-    public class Cultures : IWorldHook
+    public class Cultures : BaseCharacteristicType
     {
-        public string CharacteristicType { get { return "Cultures"; } }
-
-        public string Subtype { get { return _subtype.GetCharacteristicSubtype(); } }
-
-        private CultureSubtype _subtype;
-
-        public Cultures()
+        public Cultures() : base("Cultures", new CultureSubtype())
         {
-            _subtype = new CultureSubtype();
+
         }
 
-        public Cultures(ISeedGenerator seedGenerator)
+        public Cultures(ISeedGenerator seedGenerator) : base("Cultures", new CultureSubtype(seedGenerator))
         {
-            _subtype = new CultureSubtype(seedGenerator);
-        }
 
-        public string GetHook()
-        {
-            return $@"Characteristic: {CharacteristicType}
-Subtype: {Subtype}";
         }
     }
 }
