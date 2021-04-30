@@ -1,4 +1,5 @@
 ﻿using DiceTypes.Interfaces;
+using System.Collections.Generic;
 
 namespace RandomTables.WorldHooks.Subtypes
 {
@@ -6,14 +7,24 @@ namespace RandomTables.WorldHooks.Subtypes
     {
         private IDie die;
 
+        public Dictionary<int, string> subtypeLookup;
+
         public BaseSubtype(IDie die)
         {
             this.die = die;
         }
 
-        internal int RollDie()
+        public int RollDie()
         {
             return die.RollDie();
+        }
+
+        public string GetCharacteristicSubtype()
+        {
+            var rollResult = RollDie();
+            var subtype = subtypeLookup[rollResult];
+
+            return subtype;
         }
     }
 }
