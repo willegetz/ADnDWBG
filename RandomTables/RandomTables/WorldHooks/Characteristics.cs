@@ -32,7 +32,7 @@ namespace RandomTables.WorldHooks
             _percentileDice = new PercentileDice0and0(seedGenerator);
         }
 
-        public Func<IWorldHook> GetSubtype(int rollResult)
+        public Func<IWorldHook> WorldHookLookup(int rollResult)
         {
             var subtype = worldHookTable.Query(rollResult)
                                         .ToList()
@@ -45,7 +45,7 @@ namespace RandomTables.WorldHooks
         public IWorldHook GetWorldHook()
         {
             var rollResult = _percentileDice.RollDie();
-            var worldHook = GetSubtype(rollResult);
+            var worldHook = WorldHookLookup(rollResult);
 
             return worldHook();
         }
