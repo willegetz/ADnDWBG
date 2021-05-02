@@ -9,14 +9,7 @@ namespace RandomTablesTests.WorldHooks
     public class WorldHooksTests
     {
         [TestMethod]
-        public void GetClimateOrLandformMountain()
-        {
-            // In order to get the correct type I need to mock the characteristic seedGenerator
-            // In order to get the correct subtype I need to mock the subtype seedGenerator
-        }
-
-        [TestMethod]
-        public void FixTheClimateOrLandformFactory()
+        public void GetFullWorldHookDescription_ClimateOrLandform_PlainsOrSteppes()
         {
             // The factory chosen from the lookup returns an instance of ClimateOrLandform, not
             // a factory.
@@ -38,7 +31,10 @@ namespace RandomTablesTests.WorldHooks
             var worldHook = hookFactory.GetWorldHook(mockSubtypeSeedGenerator.Object);
             var hook = worldHook.GetHook();
 
-            Assert.AreEqual("", hook);
+            var expectedHook = @"Characteristic: Climate or Landform
+Subtype: Plains/steppes";
+
+            Assert.AreEqual(expectedHook, hook);
         }
     }
 }
