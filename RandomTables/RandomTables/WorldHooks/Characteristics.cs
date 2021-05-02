@@ -49,5 +49,23 @@ namespace RandomTables.WorldHooks
 
             return worldHook();
         }
+
+        public IntervalTree<int, Func<IWorldHookFactory>> worldHookFactories = new IntervalTree<int, Func<IWorldHookFactory>>()
+        {
+            {1, 24, ClimateOrLandformFactory.GetFactory }
+        };
+
+        public IWorldHookFactory GetWorldHookFactory()
+        {
+            var rollResult = _percentileDice.RollDie();
+
+            var hookFactory = worldHookFactories.Query(rollResult)
+                                                .ToList()
+                                                .Select(x => x)
+                                                .FirstOrDefault();
+
+            return hookFactory();
+
+        }
     }
 }

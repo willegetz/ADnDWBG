@@ -72,6 +72,7 @@
     <Compile Include="TestHelpers\SeedFinder.cs" />
     <Compile Include="WorldHooks\CharacteristicsTests.cs" />
     <Compile Include="WorldHooks\CharacteristicSubtypesTests.cs" />
+    <Compile Include="WorldHooks\WorldHooksTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
