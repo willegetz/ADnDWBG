@@ -2,6 +2,7 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
 using RandomTables.WorldHooks;
+using System.Collections.Generic;
 
 namespace RandomTablesTests.WorldHooks
 {
@@ -24,13 +25,26 @@ namespace RandomTablesTests.WorldHooks
                           .Returns(firstSeed)
                           .Returns(secondSeed);
 
+            mockSeedGenerator.Setup(x => x.GetRandomSeed())
+                             .Returns(new Queue<int>(new[] { firstSeed, secondSeed }).Dequeue);
+
+            return mockSeedGenerator;
+        }
+
+        public Mock<ISeedGenerator> GetMockSeedGenerator(int[] seeds)
+        {
+            var mockSeedGenerator = new Mock<ISeedGenerator>();
+            mockSeedGenerator.Setup(x => x.GetRandomSeed())
+                             .Returns(new Queue<int>(seeds).Dequeue);
+
             return mockSeedGenerator;
         }
 
         [TestMethod]
         public void ClimateOrLandformWhen01IsRolled()
         {
-            var mockSeedGenerator = GetMockSeedGenerator(_seedGenerates0, _seedGenerates1);
+            var seeds = new[] { _seedGenerates0, _seedGenerates1 };
+            var mockSeedGenerator = GetMockSeedGenerator(seeds);
 
             var characteristics = new Characteristics(mockSeedGenerator.Object);
             var characteristic = characteristics.GetWorldHook().CharacteristicType;

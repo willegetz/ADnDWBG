@@ -2,6 +2,7 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
 using RandomTables.WorldHooks;
+using System.Collections.Generic;
 
 namespace RandomTablesTests.WorldHooks
 {
@@ -18,7 +19,11 @@ namespace RandomTablesTests.WorldHooks
                                            .Returns(1)  // D8 result first
                                            .Returns(0); // D6 result second
 
-            var characteristics = new Characteristics(mockCharacteristicSeedGenerator.Object);
+            var mockBlah = new Mock<ISeedGenerator>();
+            mockBlah.Setup(x => x.GetRandomSeed())
+                    .Returns(new Queue<int>(new[] { 14, 18, 1, 0 }).Dequeue);
+
+            var characteristics = new Characteristics(mockBlah.Object);
             var hookFactory = characteristics.SpikeGetWorldHook();
 
             var hook = hookFactory.GetHook();
