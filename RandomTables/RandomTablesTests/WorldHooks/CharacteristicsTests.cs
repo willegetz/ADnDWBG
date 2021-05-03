@@ -5,15 +5,6 @@ using RandomTables.WorldHooks;
 
 namespace RandomTablesTests.WorldHooks
 {
-
-    // The characteristics are in a collection assigned to a range of numbers.
-    // If the percentile dice 0 and 0 return a result between the upper and lower
-    // bounds of the range, inclusive, then that characteristic is chosen.
-    // The full range goes from 01 to 00.
-
-    // Climate or landform is chosen when the result is 01 to 24.
-    // Random seed: Guid.NewGuid().GetHashCode();
-
     [TestClass]
     public class CharacteristicsTests
     {
@@ -26,13 +17,20 @@ namespace RandomTablesTests.WorldHooks
         private const int _seedGenerates6 = 17;
         private const int _seedGenerates8 = 4;
 
-        [TestMethod]
-        public void ClimateOrLandformWhen01IsRolled()
+        public Mock<ISeedGenerator> GetMockSeedGenerator(int firstSeed, int secondSeed)
         {
             var mockSeedGenerator = new Mock<ISeedGenerator>();
             mockSeedGenerator.SetupSequence(x => x.GetRandomSeed())
-                          .Returns(_seedGenerates0)
-                          .Returns(_seedGenerates1);
+                          .Returns(firstSeed)
+                          .Returns(secondSeed);
+
+            return mockSeedGenerator;
+        }
+
+        [TestMethod]
+        public void ClimateOrLandformWhen01IsRolled()
+        {
+            var mockSeedGenerator = GetMockSeedGenerator(_seedGenerates0, _seedGenerates1);
 
             var characteristics = new Characteristics(mockSeedGenerator.Object);
             var characteristic = characteristics.GetWorldHook().CharacteristicType;
@@ -45,10 +43,7 @@ namespace RandomTablesTests.WorldHooks
         [TestMethod]
         public void ClimateOrLandformWhen24IsRolled()
         {
-            var mockSeedGenerator = new Mock<ISeedGenerator>();
-            mockSeedGenerator.SetupSequence(x => x.GetRandomSeed())
-                          .Returns(_seedGenerates2)
-                          .Returns(_seedGenerates4);
+            var mockSeedGenerator = GetMockSeedGenerator(_seedGenerates2, _seedGenerates4);
 
             var characteristics = new Characteristics(mockSeedGenerator.Object);
             var characteristic = characteristics.GetWorldHook().CharacteristicType;
@@ -61,10 +56,7 @@ namespace RandomTablesTests.WorldHooks
         [TestMethod]
         public void SitesOfInterestWhen25IsRolled()
         {
-            var mockSeedGenerator = new Mock<ISeedGenerator>();
-            mockSeedGenerator.SetupSequence(x => x.GetRandomSeed())
-                          .Returns(_seedGenerates2)
-                          .Returns(_seedGenerates5);
+            var mockSeedGenerator = GetMockSeedGenerator(_seedGenerates2, _seedGenerates5);
 
             var characteristics = new Characteristics(mockSeedGenerator.Object);
             var characteristic = characteristics.GetWorldHook().CharacteristicType;
@@ -77,10 +69,7 @@ namespace RandomTablesTests.WorldHooks
         [TestMethod]
         public void SitesOfInterestWhen34IsRolled()
         {
-            var mockSeedGenerator = new Mock<ISeedGenerator>();
-            mockSeedGenerator.SetupSequence(x => x.GetRandomSeed())
-                          .Returns(_seedGenerates3)
-                          .Returns(_seedGenerates4);
+            var mockSeedGenerator = GetMockSeedGenerator(_seedGenerates3, _seedGenerates4);
 
             var characteristics = new Characteristics(mockSeedGenerator.Object);
             var characteristic = characteristics.GetWorldHook().CharacteristicType;
@@ -93,10 +82,7 @@ namespace RandomTablesTests.WorldHooks
         [TestMethod]
         public void CulturesWhen35IsRolled()
         {
-            var mockSeedGenerator = new Mock<ISeedGenerator>();
-            mockSeedGenerator.SetupSequence(x => x.GetRandomSeed())
-                          .Returns(_seedGenerates3)
-                          .Returns(_seedGenerates5);
+            var mockSeedGenerator = GetMockSeedGenerator(_seedGenerates3, _seedGenerates5);
 
             var characteristics = new Characteristics(mockSeedGenerator.Object);
             var characteristic = characteristics.GetWorldHook().CharacteristicType;
@@ -109,10 +95,7 @@ namespace RandomTablesTests.WorldHooks
         [TestMethod]
         public void CulturesWhen60IsRolled()
         {
-            var mockSeedGenerator = new Mock<ISeedGenerator>();
-            mockSeedGenerator.SetupSequence(x => x.GetRandomSeed())
-                          .Returns(_seedGenerates6)
-                          .Returns(_seedGenerates0);
+            var mockSeedGenerator = GetMockSeedGenerator(_seedGenerates6, _seedGenerates0);
 
             var characteristics = new Characteristics(mockSeedGenerator.Object);
             var characteristic = characteristics.GetWorldHook().CharacteristicType;
@@ -125,10 +108,7 @@ namespace RandomTablesTests.WorldHooks
         [TestMethod]
         public void SituationWhen61IsRolled()
         {
-            var mockSeedGenerator = new Mock<ISeedGenerator>();
-            mockSeedGenerator.SetupSequence(x => x.GetRandomSeed())
-                          .Returns(_seedGenerates6)
-                          .Returns(_seedGenerates1);
+            var mockSeedGenerator = GetMockSeedGenerator(_seedGenerates6, _seedGenerates1);
 
             var characteristics = new Characteristics(mockSeedGenerator.Object);
             var characteristic = characteristics.GetWorldHook().CharacteristicType;
@@ -141,10 +121,7 @@ namespace RandomTablesTests.WorldHooks
         [TestMethod]
         public void SituationWhen85IsRolled()
         {
-            var mockSeedGenerator = new Mock<ISeedGenerator>();
-            mockSeedGenerator.SetupSequence(x => x.GetRandomSeed())
-                          .Returns(_seedGenerates8)
-                          .Returns(_seedGenerates5);
+            var mockSeedGenerator = GetMockSeedGenerator(_seedGenerates8, _seedGenerates5);
 
             var characteristics = new Characteristics(mockSeedGenerator.Object);
             var characteristic = characteristics.GetWorldHook().CharacteristicType;
@@ -157,10 +134,7 @@ namespace RandomTablesTests.WorldHooks
         [TestMethod]
         public void HistoricalWhen86IsRolled()
         {
-            var mockSeedGenerator = new Mock<ISeedGenerator>();
-            mockSeedGenerator.SetupSequence(x => x.GetRandomSeed())
-                          .Returns(_seedGenerates8)
-                          .Returns(_seedGenerates6);
+            var mockSeedGenerator = GetMockSeedGenerator(_seedGenerates8, _seedGenerates6);
 
             var characteristics = new Characteristics(mockSeedGenerator.Object);
             var characteristic = characteristics.GetWorldHook().CharacteristicType;
@@ -173,10 +147,7 @@ namespace RandomTablesTests.WorldHooks
         [TestMethod]
         public void HistoricalWhen00IsRolled()
         {
-            var mockSeedGenerator = new Mock<ISeedGenerator>();
-            mockSeedGenerator.SetupSequence(x => x.GetRandomSeed())
-                          .Returns(_seedGenerates0)
-                          .Returns(_seedGenerates0);
+            var mockSeedGenerator = GetMockSeedGenerator(_seedGenerates0, _seedGenerates0);
 
             var characteristics = new Characteristics(mockSeedGenerator.Object);
             var characteristic = characteristics.GetWorldHook().CharacteristicType;
