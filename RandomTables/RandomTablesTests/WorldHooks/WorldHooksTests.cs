@@ -9,12 +9,20 @@ namespace RandomTablesTests.WorldHooks
     [TestClass]
     public class WorldHooksTests
     {
+        public Mock<ISeedGenerator> GetMockSeedGenerator(int[] seeds)
+        {
+            var mockSeedGenerator = new Mock<ISeedGenerator>();
+            mockSeedGenerator.Setup(x => x.GetRandomSeed())
+                             .Returns(new Queue<int>(seeds).Dequeue);
+
+            return mockSeedGenerator;
+        }
+
         [TestMethod]
         public void GetFullWorldHookDescription_ClimateOrLandform_PlainsOrSteppes()
         {
-            var mockCharacteristicSeedGenerator = new Mock<ISeedGenerator>();
-            mockCharacteristicSeedGenerator.Setup(x => x.GetRandomSeed())
-                    .Returns(new Queue<int>(new[] { 14, 18, 1, 0 }).Dequeue);
+            var seeds = new[] { 14, 18, 1, 0 };
+            var mockCharacteristicSeedGenerator = GetMockSeedGenerator(seeds);
 
             var characteristics = new Characteristics(mockCharacteristicSeedGenerator.Object);
             var hookFactory = characteristics.SpikeGetWorldHook();
