@@ -27,8 +27,11 @@ namespace RandomTables.WorldHooks
             _percentileDice = new PercentileDice0and0();
         }
 
+        ISeedGenerator _seedGenerator;
+
         public Characteristics(ISeedGenerator seedGenerator)
         {
+            _seedGenerator = seedGenerator;
             _percentileDice = new PercentileDice0and0(seedGenerator);
         }
 
@@ -55,7 +58,7 @@ namespace RandomTables.WorldHooks
             {1, 24, ClimateOrLandformFactory.GetFactory }
         };
 
-        public IWorldHookFactory GetWorldHookFactory()
+        public IWorldHook GetWorldHookFactory()
         {
             var rollResult = _percentileDice.RollDie();
 
@@ -64,8 +67,7 @@ namespace RandomTables.WorldHooks
                                                 .Select(x => x)
                                                 .FirstOrDefault();
 
-            return hookFactory();
-
+            return hookFactory().GetWorldHook(_seedGenerator);
         }
     }
 }
