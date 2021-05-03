@@ -3,9 +3,9 @@ using System.Linq;
 
 namespace RandomTables.TestHelpers
 {
-    public class SeedFinder
+    public class SeedHelper
     {
-        public int GetSeed(int inclusiveLowerBound, int exclusiveUpperBound, int desiredResult)
+        public int FindSeed(int inclusiveLowerBound, int exclusiveUpperBound, int desiredResult)
         {
             var seed = Enumerable.Range(0, 100).Where(x =>
             {

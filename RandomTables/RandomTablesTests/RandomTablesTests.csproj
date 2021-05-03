@@ -69,7 +69,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="TestHelpers\SeedFinder.cs" />
+    <Compile Include="TestHelpers\SeedHelper.cs" />
     <Compile Include="WorldHooks\CharacteristicsTests.cs" />
     <Compile Include="WorldHooks\CharacteristicSubtypesTests.cs" />
     <Compile Include="WorldHooks\WorldHooksTests.cs" />
