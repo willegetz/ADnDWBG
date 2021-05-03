@@ -1,28 +1,18 @@
-﻿using DiceTypes.Interfaces;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Moq;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+using RandomTables.TestHelpers;
 using RandomTables.WorldHooks;
-using System.Collections.Generic;
 
 namespace RandomTablesTests.WorldHooks
 {
     [TestClass]
     public class WorldHooksTests
     {
-        public Mock<ISeedGenerator> GetMockSeedGenerator(int[] seeds)
-        {
-            var mockSeedGenerator = new Mock<ISeedGenerator>();
-            mockSeedGenerator.Setup(x => x.GetRandomSeed())
-                             .Returns(new Queue<int>(seeds).Dequeue);
-
-            return mockSeedGenerator;
-        }
 
         [TestMethod]
         public void GetFullWorldHookDescription_ClimateOrLandform_PlainsOrSteppes()
         {
             var seeds = new[] { 14, 18, 1, 0 };
-            var mockCharacteristicSeedGenerator = GetMockSeedGenerator(seeds);
+            var mockCharacteristicSeedGenerator = SeedHelper.GetMockSeedGenerator(seeds);
 
             var characteristics = new Characteristics(mockCharacteristicSeedGenerator.Object);
             var hookFactory = characteristics.SpikeGetWorldHook();

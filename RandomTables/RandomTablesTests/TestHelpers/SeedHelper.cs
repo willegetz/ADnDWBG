@@ -1,4 +1,7 @@
-﻿using System;
+﻿using DiceTypes.Interfaces;
+using Moq;
+using System;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace RandomTables.TestHelpers
@@ -16,6 +19,15 @@ namespace RandomTables.TestHelpers
             }).FirstOrDefault();
 
             return seed;
+        }
+
+        public static Mock<ISeedGenerator> GetMockSeedGenerator(int[] seeds)
+        {
+            var mockSeedGenerator = new Mock<ISeedGenerator>();
+            mockSeedGenerator.Setup(x => x.GetRandomSeed())
+                             .Returns(new Queue<int>(seeds).Dequeue);
+
+            return mockSeedGenerator;
         }
     }
 }
