@@ -56,7 +56,8 @@ namespace RandomTables.WorldHooks
         public IntervalTree<int, Func<IWorldHookFactory>> worldHookFactories = new IntervalTree<int, Func<IWorldHookFactory>>()
         {
             {1, 24, ClimateOrLandformFactory.GetFactory },
-            {25, 34, SitesOfInterestFactory.GetFactory }
+            {25, 34, SitesOfInterestFactory.GetFactory },
+            {35, 60, CulturesFactory.GetFactory }
         };
 
         public IWorldHookFactory GetWorldHookFactory()

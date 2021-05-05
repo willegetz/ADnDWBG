@@ -49,5 +49,26 @@ Subtype: Dungeons";
 
             Assert.AreEqual(expectedHook, hook);
         }
+
+        [TestMethod]
+        public void GetFullWorldHookDescription_Cultures_Feudal()
+        {
+            var d10TensSeed = 13;
+            var d10OnesSeed = 9;
+            var d12Seed = 5;
+
+            var seeds = new[] { d10TensSeed, d10OnesSeed, d12Seed };
+            var mockCharacteristicSeedGenerator = SeedHelper.GetMockSeedGenerator(seeds);
+
+            var characteristics = new Characteristics(mockCharacteristicSeedGenerator.Object);
+            var hookFactory = characteristics.SpikeGetWorldHook();
+
+            var hook = hookFactory.GetHook();
+
+            var expectedHook = @"Characteristic: Cultures
+Subtype: Feudal";
+
+            Assert.AreEqual(expectedHook, hook);
+        }
     }
 }
