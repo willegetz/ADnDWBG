@@ -30,7 +30,7 @@ Subtype: Plains/steppes";
         }
 
         [TestMethod]
-        public void GetFullWorldHookDescription_SitesOfInterest_PlainsOrSteppes()
+        public void GetFullWorldHookDescription_SitesOfInterest_Dungeons()
         {
             var d10TensSeed = 5;
             var d10OnesSeed = 14;
