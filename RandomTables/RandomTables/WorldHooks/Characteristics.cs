@@ -57,7 +57,8 @@ namespace RandomTables.WorldHooks
         {
             {1, 24, ClimateOrLandformFactory.GetFactory },
             {25, 34, SitesOfInterestFactory.GetFactory },
-            {35, 60, CulturesFactory.GetFactory }
+            {35, 60, CulturesFactory.GetFactory },
+            {61, 85, SituationsFactory.GetFactory }
         };
 
         public IWorldHookFactory GetWorldHookFactory()

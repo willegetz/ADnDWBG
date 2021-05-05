@@ -70,5 +70,27 @@ Subtype: Feudal";
 
             Assert.AreEqual(expectedHook, hook);
         }
+
+        [TestMethod]
+        public void GetFullWorldHookDescription_Situations_Warfare()
+        {
+            var d10TensSeed = 0;
+            var d10OnesSeed = 4;
+            var d8Seed = 8;
+            var d6Seed = 13;
+
+            var seeds = new[] { d10TensSeed, d10OnesSeed, d8Seed, d6Seed };
+            var mockCharacteristicSeedGenerator = SeedHelper.GetMockSeedGenerator(seeds);
+
+            var characteristics = new Characteristics(mockCharacteristicSeedGenerator.Object);
+            var hookFactory = characteristics.SpikeGetWorldHook();
+
+            var hook = hookFactory.GetHook();
+
+            var expectedHook = @"Characteristic: Situation
+Subtype: Warfare";
+
+            Assert.AreEqual(expectedHook, hook);
+        }
     }
 }
