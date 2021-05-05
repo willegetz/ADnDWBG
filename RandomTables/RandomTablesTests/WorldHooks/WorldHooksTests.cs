@@ -36,7 +36,7 @@ namespace RandomTablesTests.WorldHooks
             var mockCharacteristicSeedGenerator = SeedHelper.GetMockSeedGenerator(seeds);
 
             var characteristics = new Characteristics(mockCharacteristicSeedGenerator.Object);
-            var hookFactory = characteristics.SpikeGetWorldHook();
+            var hookFactory = characteristics.GetWorldHook();
 
             var hook = hookFactory.GetHook();
 
@@ -57,7 +57,7 @@ Subtype: Plains/steppes";
             var mockCharacteristicSeedGenerator = SeedHelper.GetMockSeedGenerator(seeds);
 
             var characteristics = new Characteristics(mockCharacteristicSeedGenerator.Object);
-            var hookFactory = characteristics.SpikeGetWorldHook();
+            var hookFactory = characteristics.GetWorldHook();
 
             var hook = hookFactory.GetHook();
 
@@ -78,7 +78,7 @@ Subtype: Dungeons";
             var mockCharacteristicSeedGenerator = SeedHelper.GetMockSeedGenerator(seeds);
 
             var characteristics = new Characteristics(mockCharacteristicSeedGenerator.Object);
-            var hookFactory = characteristics.SpikeGetWorldHook();
+            var hookFactory = characteristics.GetWorldHook();
 
             var hook = hookFactory.GetHook();
 
@@ -100,7 +100,7 @@ Subtype: Feudal";
             var mockCharacteristicSeedGenerator = SeedHelper.GetMockSeedGenerator(seeds);
 
             var characteristics = new Characteristics(mockCharacteristicSeedGenerator.Object);
-            var hookFactory = characteristics.SpikeGetWorldHook();
+            var hookFactory = characteristics.GetWorldHook();
 
             var hook = hookFactory.GetHook();
 
@@ -121,7 +121,7 @@ Subtype: Warfare";
             var mockCharacteristicSeedGenerator = SeedHelper.GetMockSeedGenerator(seeds);
 
             var characteristics = new Characteristics(mockCharacteristicSeedGenerator.Object);
-            var hookFactory = characteristics.SpikeGetWorldHook();
+            var hookFactory = characteristics.GetWorldHook();
 
             var hook = hookFactory.GetHook();
 

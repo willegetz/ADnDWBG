@@ -21,8 +21,10 @@ namespace RandomTablesTests.WorldHooks
         {
             var tensSeed = d10Returns0;
             var onesSeed = d10Returns1;
+            var d8Seed = 0;
+            var d6Seed = 0;
 
-            var seeds = new[] { tensSeed, onesSeed };
+            var seeds = new[] { tensSeed, onesSeed, d8Seed, d6Seed };
             var mockSeedGenerator = SeedHelper.GetMockSeedGenerator(seeds);
 
             var characteristics = new Characteristics(mockSeedGenerator.Object);
@@ -38,8 +40,10 @@ namespace RandomTablesTests.WorldHooks
         {
             var tensSeed = d10Returns2;
             var onesSeed = d10Returns4;
+            var d8Seed = 0;
+            var d6Seed = 0;
 
-            var seeds = new[] { tensSeed, onesSeed };
+            var seeds = new[] { tensSeed, onesSeed, d8Seed, d6Seed };
             var mockSeedGenerator = SeedHelper.GetMockSeedGenerator(seeds);
 
             var characteristics = new Characteristics(mockSeedGenerator.Object);
@@ -55,8 +59,9 @@ namespace RandomTablesTests.WorldHooks
         {
             var tensSeed = d10Returns2;
             var onesSeed = d10Returns5;
+            var d8Seed = 0;
 
-            var seeds = new[] { tensSeed, onesSeed };
+            var seeds = new[] { tensSeed, onesSeed, d8Seed };
             var mockSeedGenerator = SeedHelper.GetMockSeedGenerator(seeds);
 
             var characteristics = new Characteristics(mockSeedGenerator.Object);
@@ -72,8 +77,9 @@ namespace RandomTablesTests.WorldHooks
         {
             var tensSeed = d10Returns3;
             var onesSeed = d10Returns4;
+            var d8Seed = 0;
 
-            var seeds = new[] { tensSeed, onesSeed};
+            var seeds = new[] { tensSeed, onesSeed, d8Seed };
             var mockSeedGenerator = SeedHelper.GetMockSeedGenerator(seeds);
 
             var characteristics = new Characteristics(mockSeedGenerator.Object);
@@ -89,8 +95,9 @@ namespace RandomTablesTests.WorldHooks
         {
             var tensSeed = d10Returns3;
             var onesSeed = d10Returns5;
+            var d12Seed = 0;
 
-            var seeds = new[] { tensSeed, onesSeed};
+            var seeds = new[] { tensSeed, onesSeed, d12Seed };
             var mockSeedGenerator = SeedHelper.GetMockSeedGenerator(seeds);
 
             var characteristics = new Characteristics(mockSeedGenerator.Object);
@@ -106,8 +113,9 @@ namespace RandomTablesTests.WorldHooks
         {
             var tensSeed = d10Returns6;
             var onesSeed = d10Returns0;
+            var d12Seed = 0;
 
-            var seeds = new[] { tensSeed, onesSeed};
+            var seeds = new[] { tensSeed, onesSeed, d12Seed };
             var mockSeedGenerator = SeedHelper.GetMockSeedGenerator(seeds);
 
             var characteristics = new Characteristics(mockSeedGenerator.Object);
@@ -123,8 +131,10 @@ namespace RandomTablesTests.WorldHooks
         {
             var tensSeed = d10Returns6;
             var onesSeed = d10Returns1;
+            var d8Seed = 0;
+            var d6Seed = 0;
 
-            var seeds = new[] { tensSeed, onesSeed};
+            var seeds = new[] { tensSeed, onesSeed, d8Seed, d6Seed };
             var mockSeedGenerator = SeedHelper.GetMockSeedGenerator(seeds);
 
             var characteristics = new Characteristics(mockSeedGenerator.Object);
@@ -140,8 +150,10 @@ namespace RandomTablesTests.WorldHooks
         {
             var tensSeed = d10Returns8;
             var onesSeed = d10Returns5;
+            var d8Seed = 0;
+            var d6Seed = 0;
 
-            var seeds = new[] { tensSeed, onesSeed};
+            var seeds = new[] { tensSeed, onesSeed, d8Seed, d6Seed };
             var mockSeedGenerator = SeedHelper.GetMockSeedGenerator(seeds);
 
             var characteristics = new Characteristics(mockSeedGenerator.Object);
@@ -157,8 +169,9 @@ namespace RandomTablesTests.WorldHooks
         {
             var tensSeed = d10Returns8;
             var onesSeed = d10Returns6;
+            var d8Seed = 0;
 
-            var seeds = new[] { tensSeed, onesSeed};
+            var seeds = new[] { tensSeed, onesSeed, d8Seed };
             var mockSeedGenerator = SeedHelper.GetMockSeedGenerator(seeds);
 
             var characteristics = new Characteristics(mockSeedGenerator.Object);
@@ -174,8 +187,9 @@ namespace RandomTablesTests.WorldHooks
         {
             var tensSeed = d10Returns0;
             var onesSeed = d10Returns0;
+            var d8Seed = 0;
 
-            var seeds = new[] { tensSeed, onesSeed};
+            var seeds = new[] { tensSeed, onesSeed, d8Seed };
             var mockSeedGenerator = SeedHelper.GetMockSeedGenerator(seeds);
 
             var characteristics = new Characteristics(mockSeedGenerator.Object);
