@@ -7,13 +7,30 @@ namespace RandomTablesTests.WorldHooks
     [TestClass]
     public class WorldHooksTests
     {
+        private const int d10Returns0 = 14;
+        private const int d10Returns1 = 18;
+        private const int d10Returns3 = 5;
+        private const int d10Returns4 = 9;
+        private const int d10Returns5 = 13;
+        private const int d10Returns7 = 0;
+        private const int d10Returns8 = 4;
+        private const int d10Returns9 = 8;
+
+        private const int d8Returns2 = 1;
+        private const int d8Returns3 = 3;
+        private const int d8Returns6 = 0;
+        private const int d8Returns8 = 8;
+
+        private const int d6Returns4 = 4;
+        private const int d6Returns5 = 0;
+
         [TestMethod]
         public void GetFullWorldHookDescription_ClimateOrLandform_PlainsOrSteppes()
         {
-            var d10TensSeed = 14;
-            var d10OnesSeed = 18;
-            var d8Seed = 1;
-            var d6Seed = 0;
+            var d10TensSeed = d10Returns0;
+            var d10OnesSeed = d10Returns1;
+            var d8Seed = d8Returns2;
+            var d6Seed = d6Returns5;
 
             var seeds = new[] { d10TensSeed, d10OnesSeed, d8Seed, d6Seed };
             var mockCharacteristicSeedGenerator = SeedHelper.GetMockSeedGenerator(seeds);
@@ -32,9 +49,9 @@ Subtype: Plains/steppes";
         [TestMethod]
         public void GetFullWorldHookDescription_SitesOfInterest_Dungeons()
         {
-            var d10TensSeed = 5;
-            var d10OnesSeed = 14;
-            var d8Seed = 3;
+            var d10TensSeed = d10Returns3;
+            var d10OnesSeed = d10Returns0;
+            var d8Seed = d8Returns3;
 
             var seeds = new[] { d10TensSeed, d10OnesSeed, d8Seed };
             var mockCharacteristicSeedGenerator = SeedHelper.GetMockSeedGenerator(seeds);
@@ -53,8 +70,8 @@ Subtype: Dungeons";
         [TestMethod]
         public void GetFullWorldHookDescription_Cultures_Feudal()
         {
-            var d10TensSeed = 13;
-            var d10OnesSeed = 9;
+            var d10TensSeed = d10Returns5;
+            var d10OnesSeed = d10Returns4;
             var d12Seed = 5;
 
             var seeds = new[] { d10TensSeed, d10OnesSeed, d12Seed };
@@ -74,10 +91,10 @@ Subtype: Feudal";
         [TestMethod]
         public void GetFullWorldHookDescription_Situations_Warfare()
         {
-            var d10TensSeed = 0;
-            var d10OnesSeed = 4;
-            var d8Seed = 8;
-            var d6Seed = 13;
+            var d10TensSeed = d10Returns7;
+            var d10OnesSeed = d10Returns8;
+            var d8Seed = d8Returns8;
+            var d6Seed = d6Returns4;
 
             var seeds = new[] { d10TensSeed, d10OnesSeed, d8Seed, d6Seed };
             var mockCharacteristicSeedGenerator = SeedHelper.GetMockSeedGenerator(seeds);
@@ -96,9 +113,9 @@ Subtype: Warfare";
         [TestMethod]
         public void GetFullWorldHookDescription_Historical_Insurrection()
         {
-            var d10TensSeed = 8;
-            var d10OnesSeed = 0;
-            var d8Seed = 0;
+            var d10TensSeed = d10Returns9;
+            var d10OnesSeed = d10Returns7;
+            var d8Seed = d8Returns6;
 
             var seeds = new[] { d10TensSeed, d10OnesSeed, d8Seed };
             var mockCharacteristicSeedGenerator = SeedHelper.GetMockSeedGenerator(seeds);

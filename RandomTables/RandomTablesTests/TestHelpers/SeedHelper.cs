@@ -21,6 +21,14 @@ namespace RandomTables.TestHelpers
             return seed;
         }
 
+        public static int FindValue(int inclusiveLowerBound, int exclusiveUpperBound, int desiredSeed)
+        {
+            var rando = new Random(desiredSeed);
+            var result = rando.Next(inclusiveLowerBound, exclusiveUpperBound);
+
+            return result;
+        }
+
         public static Mock<ISeedGenerator> GetMockSeedGenerator(int[] seeds)
         {
             var mockSeedGenerator = new Mock<ISeedGenerator>();
