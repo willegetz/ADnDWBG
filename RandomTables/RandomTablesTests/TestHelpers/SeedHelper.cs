@@ -8,7 +8,7 @@ namespace RandomTables.TestHelpers
 {
     public class SeedHelper
     {
-        public int FindSeed(int inclusiveLowerBound, int exclusiveUpperBound, int desiredResult)
+        public static int FindSeed(int inclusiveLowerBound, int exclusiveUpperBound, int desiredResult)
         {
             var seed = Enumerable.Range(0, 100).Where(x =>
             {
