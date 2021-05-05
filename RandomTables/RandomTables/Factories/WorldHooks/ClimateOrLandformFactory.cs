@@ -6,11 +6,6 @@ namespace RandomTables.Factories.WorldHooks
 {
     public class ClimateOrLandformFactory : IWorldHookFactory
     {
-        public static ClimateOrLandform Get()
-        {
-            return new ClimateOrLandform();
-        }
-
         public static IWorldHookFactory GetFactory()
         {
             return new ClimateOrLandformFactory();

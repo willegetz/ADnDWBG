@@ -6,11 +6,6 @@ namespace RandomTables.Factories.WorldHooks
 {
     public class SituationsFactory : IWorldHookFactory
     {
-        public static Situations Get()
-        {
-            return new Situations();
-        }
-
         public static IWorldHookFactory GetFactory()
         {
             return new SituationsFactory();
