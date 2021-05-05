@@ -92,5 +92,26 @@ Subtype: Warfare";
 
             Assert.AreEqual(expectedHook, hook);
         }
+
+        [TestMethod]
+        public void GetFullWorldHookDescription_Historical_Insurrection()
+        {
+            var d10TensSeed = 8;
+            var d10OnesSeed = 0;
+            var d8Seed = 0;
+
+            var seeds = new[] { d10TensSeed, d10OnesSeed, d8Seed };
+            var mockCharacteristicSeedGenerator = SeedHelper.GetMockSeedGenerator(seeds);
+
+            var characteristics = new Characteristics(mockCharacteristicSeedGenerator.Object);
+            var hookFactory = characteristics.SpikeGetWorldHook();
+
+            var hook = hookFactory.GetHook();
+
+            var expectedHook = @"Characteristic: Historical
+Subtype: Insurrection";
+
+            Assert.AreEqual(expectedHook, hook);
+        }
     }
 }
