@@ -15,7 +15,8 @@ namespace RandomTables.LocalArea
             {11, 19, "Coastal or Penninsula" },
             {20, 29, "Major Lake" },
             {30, 45, "Major River" },
-            {46, 70, "Minor Lakes and Rivers" }
+            {46, 70, "Minor Lakes and Rivers" },
+            {71, 99, "No Significant Water" }
         };
 
         public SeasAndRivers(ISeedGenerator seedGenerator)
