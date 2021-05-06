@@ -36,5 +36,22 @@ namespace RandomTablesTests.LocalArea
 
             Assert.AreEqual(expectedseaAndRiverResult, seaAndRiverResult);
         }
+
+        [TestMethod]
+        public void IslandWhen10IsRolled()
+        {
+            var tensSeed = d10Returns1;
+            var onesSeed = d10Returns0;
+
+            var seeds = new[] { tensSeed, onesSeed };
+            var mockSeedGenerator = SeedHelper.GetMockSeedGenerator(seeds);
+
+            var seasAndRivers = new SeasAndRivers(mockSeedGenerator.Object);
+            var seaAndRiverResult = seasAndRivers.GetLocalAreaDetail();
+
+            var expectedseaAndRiverResult = "Island";
+
+            Assert.AreEqual(expectedseaAndRiverResult, seaAndRiverResult);
+        }
     }
 }

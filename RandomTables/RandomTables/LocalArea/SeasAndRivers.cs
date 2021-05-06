@@ -1,11 +1,7 @@
 ﻿using DiceTypes.DieTypes.Complex;
 using DiceTypes.Interfaces;
 using IntervalTree;
-using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace RandomTables.LocalArea
 {
