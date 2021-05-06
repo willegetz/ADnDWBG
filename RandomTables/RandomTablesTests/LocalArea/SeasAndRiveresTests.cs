@@ -106,5 +106,22 @@ namespace RandomTablesTests.LocalArea
 
             Assert.AreEqual(expectedseaAndRiverResult, seaAndRiverResult);
         }
+
+        [TestMethod]
+        public void MajorLakeWhen29IsRolled()
+        {
+            var tensSeed = d10Returns2;
+            var onesSeed = d10Returns9;
+
+            var seeds = new[] { tensSeed, onesSeed };
+            var mockSeedGenerator = SeedHelper.GetMockSeedGenerator(seeds);
+
+            var seasAndRivers = new SeasAndRivers(mockSeedGenerator.Object);
+            var seaAndRiverResult = seasAndRivers.GetLocalAreaDetail();
+
+            var expectedseaAndRiverResult = "Major Lake";
+
+            Assert.AreEqual(expectedseaAndRiverResult, seaAndRiverResult);
+        }
     }
 }
