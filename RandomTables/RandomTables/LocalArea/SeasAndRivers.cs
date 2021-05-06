@@ -20,6 +20,11 @@ namespace RandomTables.LocalArea
             {0, 0, "No Significant Water" }
         };
 
+        public SeasAndRivers()
+        {
+            _percentileDice = new PercentileDice0and0();
+        }
+
         public SeasAndRivers(ISeedGenerator seedGenerator)
         {
             _percentileDice = new PercentileDice0and0(seedGenerator);

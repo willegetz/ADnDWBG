@@ -5,12 +5,12 @@ namespace RandomTables.WorldHooks.Types
 {
     public class Cultures : BaseCharacteristicType
     {
-        public Cultures() : base("Cultures", new CultureSubtype())
+        public Cultures() : base("Cultures", new CulturesSubtype())
         {
 
         }
 
-        public Cultures(ISeedGenerator seedGenerator) : base("Cultures", new CultureSubtype(seedGenerator))
+        public Cultures(ISeedGenerator seedGenerator) : base("Cultures", new CulturesSubtype(seedGenerator))
         {
 
         }

@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 namespace RandomTables.WorldHooks.Subtypes
 {
-    class SituationsSubtype : BaseSubtype
+    public class SituationsSubtype : BaseSubtype
     {
         private Dictionary<int, string> situations = new Dictionary<int, string>()
         {
