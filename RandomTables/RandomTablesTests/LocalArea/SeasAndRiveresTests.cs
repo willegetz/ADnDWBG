@@ -9,6 +9,8 @@ namespace RandomTablesTests.LocalArea
     {
         private const int d10Returns0 = 14;
         private const int d10Returns1 = 18;
+        private const int d10Returns2 = 1;
+        private const int d10Returns9 = 8;
 
         [TestMethod]
         public void IslandWhen01IsRolled()
@@ -67,6 +69,40 @@ namespace RandomTablesTests.LocalArea
             var seaAndRiverResult = seasAndRivers.GetLocalAreaDetail();
 
             var expectedseaAndRiverResult = "Coastal or Penninsula";
+
+            Assert.AreEqual(expectedseaAndRiverResult, seaAndRiverResult);
+        }
+
+        [TestMethod]
+        public void CoastalOrPenninsulaWhen19IsRolled()
+        {
+            var tensSeed = d10Returns1;
+            var onesSeed = d10Returns9;
+
+            var seeds = new[] { tensSeed, onesSeed };
+            var mockSeedGenerator = SeedHelper.GetMockSeedGenerator(seeds);
+
+            var seasAndRivers = new SeasAndRivers(mockSeedGenerator.Object);
+            var seaAndRiverResult = seasAndRivers.GetLocalAreaDetail();
+
+            var expectedseaAndRiverResult = "Coastal or Penninsula";
+
+            Assert.AreEqual(expectedseaAndRiverResult, seaAndRiverResult);
+        }
+
+        [TestMethod]
+        public void MajorLakeWhen20IsRolled()
+        {
+            var tensSeed = d10Returns2;
+            var onesSeed = d10Returns0;
+
+            var seeds = new[] { tensSeed, onesSeed };
+            var mockSeedGenerator = SeedHelper.GetMockSeedGenerator(seeds);
+
+            var seasAndRivers = new SeasAndRivers(mockSeedGenerator.Object);
+            var seaAndRiverResult = seasAndRivers.GetLocalAreaDetail();
+
+            var expectedseaAndRiverResult = "Major Lake";
 
             Assert.AreEqual(expectedseaAndRiverResult, seaAndRiverResult);
         }
