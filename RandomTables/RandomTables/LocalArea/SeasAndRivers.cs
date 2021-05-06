@@ -11,7 +11,8 @@ namespace RandomTables.LocalArea
 
         public IntervalTree<int, string> seasAndRiversLookup = new IntervalTree<int, string>()
         {
-            {1, 10, "Island" }
+            {1, 10, "Island" },
+            {11, 19, "Coastal or Penninsula" },
         };
 
         public SeasAndRivers(ISeedGenerator seedGenerator)
