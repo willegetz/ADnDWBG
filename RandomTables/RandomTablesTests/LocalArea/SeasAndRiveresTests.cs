@@ -230,5 +230,22 @@ namespace RandomTablesTests.LocalArea
 
             Assert.AreEqual(expectedseaAndRiverResult, seaAndRiverResult);
         }
+
+        [TestMethod]
+        public void NoSignificantWaterWhen00IsRolled()
+        {
+            var tensSeed = d10Returns0;
+            var onesSeed = d10Returns0;
+
+            var seeds = new[] { tensSeed, onesSeed };
+            var mockSeedGenerator = SeedHelper.GetMockSeedGenerator(seeds);
+
+            var seasAndRivers = new SeasAndRivers(mockSeedGenerator.Object);
+            var seaAndRiverResult = seasAndRivers.GetLocalAreaDetail();
+
+            var expectedseaAndRiverResult = "No Significant Water";
+
+            Assert.AreEqual(expectedseaAndRiverResult, seaAndRiverResult);
+        }
     }
 }
