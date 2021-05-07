@@ -15,7 +15,8 @@ namespace RandomTables.LocalArea
 
         public IntervalTree<int, string> mountainsAndHillsLookup = new IntervalTree<int, string>()
         {
-            {1, 8, "Very Mountainous" }
+            {1, 8, "Very Mountainous" },
+            {9, 22, "Mountainous" }
         };
 
         public MountainsAndHills()

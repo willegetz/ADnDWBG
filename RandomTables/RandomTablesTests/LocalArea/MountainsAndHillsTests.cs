@@ -10,7 +10,9 @@ namespace RandomTablesTests.LocalArea
     {
         private const int d10Returns0 = 14;
         private const int d10Returns1 = 18;
+        private const int d10Returns2 = 1;
         private const int d10Returns8 = 4;
+        private const int d10Returns9 = 8;
 
         [TestMethod]
         public void VeryMountainousWhen01IsRolled()
@@ -42,6 +44,40 @@ namespace RandomTablesTests.LocalArea
             var mountainsAndHillsResult = mountainsAndHills.GetLocalAreaDetail();
 
             var expectedMountainsAndHillsResult = "Very Mountainous";
+
+            Assert.AreEqual(expectedMountainsAndHillsResult, mountainsAndHillsResult);
+        }
+
+        [TestMethod]
+        public void MountainousWhen09IsRolled()
+        {
+            var tensSeed = d10Returns0;
+            var onesSeed = d10Returns9;
+
+            var seeds = new[] { tensSeed, onesSeed };
+            var mockSeedGenerator = SeedHelper.GetMockSeedGenerator(seeds);
+
+            var mountainsAndHills = new MountainsAndHills(mockSeedGenerator.Object);
+            var mountainsAndHillsResult = mountainsAndHills.GetLocalAreaDetail();
+
+            var expectedMountainsAndHillsResult = "Mountainous";
+
+            Assert.AreEqual(expectedMountainsAndHillsResult, mountainsAndHillsResult);
+        }
+
+        [TestMethod]
+        public void MountainousWhen22IsRolled()
+        {
+            var tensSeed = d10Returns2;
+            var onesSeed = d10Returns2;
+
+            var seeds = new[] { tensSeed, onesSeed };
+            var mockSeedGenerator = SeedHelper.GetMockSeedGenerator(seeds);
+
+            var mountainsAndHills = new MountainsAndHills(mockSeedGenerator.Object);
+            var mountainsAndHillsResult = mountainsAndHills.GetLocalAreaDetail();
+
+            var expectedMountainsAndHillsResult = "Mountainous";
 
             Assert.AreEqual(expectedMountainsAndHillsResult, mountainsAndHillsResult);
         }
