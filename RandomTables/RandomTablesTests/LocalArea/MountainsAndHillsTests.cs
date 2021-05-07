@@ -186,5 +186,56 @@ namespace RandomTablesTests.LocalArea
 
             Assert.AreEqual(expectedMountainsAndHillsResult, mountainsAndHillsResult);
         }
+
+        [TestMethod]
+        public void PlainsWhen77IsRolled()
+        {
+            var tensSeed = d10Returns7;
+            var onesSeed = d10Returns7;
+
+            var seeds = new[] { tensSeed, onesSeed };
+            var mockSeedGenerator = SeedHelper.GetMockSeedGenerator(seeds);
+
+            var mountainsAndHills = new MountainsAndHills(mockSeedGenerator.Object);
+            var mountainsAndHillsResult = mountainsAndHills.GetLocalAreaDetail();
+
+            var expectedMountainsAndHillsResult = "Plains";
+
+            Assert.AreEqual(expectedMountainsAndHillsResult, mountainsAndHillsResult);
+        }
+
+        [TestMethod]
+        public void PlainsWhen99IsRolled()
+        {
+            var tensSeed = d10Returns9;
+            var onesSeed = d10Returns9;
+
+            var seeds = new[] { tensSeed, onesSeed };
+            var mockSeedGenerator = SeedHelper.GetMockSeedGenerator(seeds);
+
+            var mountainsAndHills = new MountainsAndHills(mockSeedGenerator.Object);
+            var mountainsAndHillsResult = mountainsAndHills.GetLocalAreaDetail();
+
+            var expectedMountainsAndHillsResult = "Plains";
+
+            Assert.AreEqual(expectedMountainsAndHillsResult, mountainsAndHillsResult);
+        }
+
+        [TestMethod]
+        public void PlainsWhen00IsRolled()
+        {
+            var tensSeed = d10Returns0;
+            var onesSeed = d10Returns0;
+
+            var seeds = new[] { tensSeed, onesSeed };
+            var mockSeedGenerator = SeedHelper.GetMockSeedGenerator(seeds);
+
+            var mountainsAndHills = new MountainsAndHills(mockSeedGenerator.Object);
+            var mountainsAndHillsResult = mountainsAndHills.GetLocalAreaDetail();
+
+            var expectedMountainsAndHillsResult = "Plains";
+
+            Assert.AreEqual(expectedMountainsAndHillsResult, mountainsAndHillsResult);
+        }
     }
 }

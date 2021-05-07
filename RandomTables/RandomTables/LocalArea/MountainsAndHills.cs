@@ -19,7 +19,9 @@ namespace RandomTables.LocalArea
             {9, 22, "Mountainous" },
             {23, 37, "Rugged Hills" },
             {37, 69, "Gentle Hills" },
-            {70, 76, "Tablelands" }
+            {70, 76, "Tablelands" },
+            {77, 99, "Plains" },
+            {0, 0, "Plains" }
         };
 
         public MountainsAndHills()
