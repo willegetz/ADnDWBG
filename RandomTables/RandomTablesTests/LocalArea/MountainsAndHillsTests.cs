@@ -1,7 +1,6 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using RandomTables.LocalArea;
 using RandomTables.TestHelpers;
-using System;
 
 namespace RandomTablesTests.LocalArea
 {

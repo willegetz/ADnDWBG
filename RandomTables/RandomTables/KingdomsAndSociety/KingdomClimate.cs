@@ -3,29 +3,30 @@ using DiceTypes.Interfaces;
 using IntervalTree;
 using System.Linq;
 
-namespace RandomTables.LocalArea
+namespace RandomTables.KingdomsAndSociety
 {
-    public class MountainsAndHills
+    public class KingdomClimate
     {
         private PercentileDice0and0 _percentileDice;
 
-        public IntervalTree<int, string> mountainsAndHillsLookup = new IntervalTree<int, string>()
+        public IntervalTree<int, string> kingdomClimateLookup = new IntervalTree<int, string>()
         {
-            {1, 8, "Very Mountainous" },
-            {9, 22, "Mountainous" },
-            {23, 37, "Rugged Hills" },
-            {37, 69, "Gentle Hills" },
-            {70, 76, "Tablelands" },
-            {77, 99, "Plains" },
-            {0, 0, "Plains" }
+            {1, 1, "Super-arctic" },
+            {2, 6, "Arctic" },
+            {7, 25, "Sub-arctic" },
+            {26, 60, "Temperate" },
+            {61, 80, "Sub-tropical" },
+            {81, 97, "Tropical" },
+            {98, 99, "Super-tropical" },
+            {0, 0, "Super-tropical" }
         };
 
-        public MountainsAndHills()
+        public KingdomClimate()
         {
             _percentileDice = new PercentileDice0and0();
         }
 
-        public MountainsAndHills(ISeedGenerator seedGenerator)
+        public KingdomClimate(ISeedGenerator seedGenerator)
         {
             _percentileDice = new PercentileDice0and0(seedGenerator);
         }
@@ -33,7 +34,7 @@ namespace RandomTables.LocalArea
         public string GetLocalAreaDetail()
         {
             var rollResult = _percentileDice.RollDie();
-            var result = mountainsAndHillsLookup.Query(rollResult)
+            var result = kingdomClimateLookup.Query(rollResult)
                                                 .ToList()
                                                 .Select(x => x)
                                                 .FirstOrDefault();

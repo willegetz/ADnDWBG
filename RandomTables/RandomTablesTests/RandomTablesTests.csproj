@@ -68,6 +68,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="KingdomsAndSociety\KingdomClimateTests.cs" />
     <Compile Include="LocalArea\MountainsAndHillsTests.cs" />
     <Compile Include="LocalArea\SeasAndRiveresTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
