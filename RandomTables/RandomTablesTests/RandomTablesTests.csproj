@@ -68,6 +68,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="LocalArea\MountainsAndHillsTests.cs" />
     <Compile Include="LocalArea\SeasAndRiveresTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TestHelpers\SeedHelper.cs" />
