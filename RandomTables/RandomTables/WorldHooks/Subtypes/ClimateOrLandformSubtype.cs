@@ -1,5 +1,6 @@
 ﻿using DiceTypes.DieTypes.Complex;
 using DiceTypes.Interfaces;
+using RandomTables.BaseClasses.WorldHooks;
 using System.Collections.Generic;
 
 namespace RandomTables.WorldHooks.Subtypes

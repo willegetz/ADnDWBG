@@ -2,7 +2,7 @@
 using RandomTables.Interfaces.WorldHooks;
 using System.Collections.Generic;
 
-namespace RandomTables.WorldHooks.Subtypes
+namespace RandomTables.BaseClasses.WorldHooks
 {
     public class BaseSubtype : IWorldHookSubtype
     {
