@@ -27,7 +27,7 @@ namespace RandomTablesTests.LocalArea
             var mockSeedGenerator = SeedHelper.GetMockSeedGenerator(seeds);
 
             var seasAndRivers = new SeasAndRivers(mockSeedGenerator.Object);
-            var seaAndRiverResult = seasAndRivers.GetLocalAreaDetail();
+            var seaAndRiverResult = seasAndRivers.GetRandomTableResult();
 
             var expectedseaAndRiverResult = "Island";
 
@@ -44,7 +44,7 @@ namespace RandomTablesTests.LocalArea
             var mockSeedGenerator = SeedHelper.GetMockSeedGenerator(seeds);
 
             var seasAndRivers = new SeasAndRivers(mockSeedGenerator.Object);
-            var seaAndRiverResult = seasAndRivers.GetLocalAreaDetail();
+            var seaAndRiverResult = seasAndRivers.GetRandomTableResult();
 
             var expectedseaAndRiverResult = "Island";
 
@@ -61,7 +61,7 @@ namespace RandomTablesTests.LocalArea
             var mockSeedGenerator = SeedHelper.GetMockSeedGenerator(seeds);
 
             var seasAndRivers = new SeasAndRivers(mockSeedGenerator.Object);
-            var seaAndRiverResult = seasAndRivers.GetLocalAreaDetail();
+            var seaAndRiverResult = seasAndRivers.GetRandomTableResult();
 
             var expectedseaAndRiverResult = "Coastal or Penninsula";
 
@@ -78,7 +78,7 @@ namespace RandomTablesTests.LocalArea
             var mockSeedGenerator = SeedHelper.GetMockSeedGenerator(seeds);
 
             var seasAndRivers = new SeasAndRivers(mockSeedGenerator.Object);
-            var seaAndRiverResult = seasAndRivers.GetLocalAreaDetail();
+            var seaAndRiverResult = seasAndRivers.GetRandomTableResult();
 
             var expectedseaAndRiverResult = "Coastal or Penninsula";
 
@@ -95,7 +95,7 @@ namespace RandomTablesTests.LocalArea
             var mockSeedGenerator = SeedHelper.GetMockSeedGenerator(seeds);
 
             var seasAndRivers = new SeasAndRivers(mockSeedGenerator.Object);
-            var seaAndRiverResult = seasAndRivers.GetLocalAreaDetail();
+            var seaAndRiverResult = seasAndRivers.GetRandomTableResult();
 
             var expectedseaAndRiverResult = "Major Lake";
 
@@ -112,7 +112,7 @@ namespace RandomTablesTests.LocalArea
             var mockSeedGenerator = SeedHelper.GetMockSeedGenerator(seeds);
 
             var seasAndRivers = new SeasAndRivers(mockSeedGenerator.Object);
-            var seaAndRiverResult = seasAndRivers.GetLocalAreaDetail();
+            var seaAndRiverResult = seasAndRivers.GetRandomTableResult();
 
             var expectedseaAndRiverResult = "Major Lake";
 
@@ -129,7 +129,7 @@ namespace RandomTablesTests.LocalArea
             var mockSeedGenerator = SeedHelper.GetMockSeedGenerator(seeds);
 
             var seasAndRivers = new SeasAndRivers(mockSeedGenerator.Object);
-            var seaAndRiverResult = seasAndRivers.GetLocalAreaDetail();
+            var seaAndRiverResult = seasAndRivers.GetRandomTableResult();
 
             var expectedseaAndRiverResult = "Major River";
 
@@ -146,7 +146,7 @@ namespace RandomTablesTests.LocalArea
             var mockSeedGenerator = SeedHelper.GetMockSeedGenerator(seeds);
 
             var seasAndRivers = new SeasAndRivers(mockSeedGenerator.Object);
-            var seaAndRiverResult = seasAndRivers.GetLocalAreaDetail();
+            var seaAndRiverResult = seasAndRivers.GetRandomTableResult();
 
             var expectedseaAndRiverResult = "Major River";
 
@@ -163,7 +163,7 @@ namespace RandomTablesTests.LocalArea
             var mockSeedGenerator = SeedHelper.GetMockSeedGenerator(seeds);
 
             var seasAndRivers = new SeasAndRivers(mockSeedGenerator.Object);
-            var seaAndRiverResult = seasAndRivers.GetLocalAreaDetail();
+            var seaAndRiverResult = seasAndRivers.GetRandomTableResult();
 
             var expectedseaAndRiverResult = "Minor Lakes and Rivers";
 
@@ -180,7 +180,7 @@ namespace RandomTablesTests.LocalArea
             var mockSeedGenerator = SeedHelper.GetMockSeedGenerator(seeds);
 
             var seasAndRivers = new SeasAndRivers(mockSeedGenerator.Object);
-            var seaAndRiverResult = seasAndRivers.GetLocalAreaDetail();
+            var seaAndRiverResult = seasAndRivers.GetRandomTableResult();
 
             var expectedseaAndRiverResult = "Minor Lakes and Rivers";
 
@@ -197,7 +197,7 @@ namespace RandomTablesTests.LocalArea
             var mockSeedGenerator = SeedHelper.GetMockSeedGenerator(seeds);
 
             var seasAndRivers = new SeasAndRivers(mockSeedGenerator.Object);
-            var seaAndRiverResult = seasAndRivers.GetLocalAreaDetail();
+            var seaAndRiverResult = seasAndRivers.GetRandomTableResult();
 
             var expectedseaAndRiverResult = "No Significant Water";
 
@@ -214,7 +214,7 @@ namespace RandomTablesTests.LocalArea
             var mockSeedGenerator = SeedHelper.GetMockSeedGenerator(seeds);
 
             var seasAndRivers = new SeasAndRivers(mockSeedGenerator.Object);
-            var seaAndRiverResult = seasAndRivers.GetLocalAreaDetail();
+            var seaAndRiverResult = seasAndRivers.GetRandomTableResult();
 
             var expectedseaAndRiverResult = "No Significant Water";
 
@@ -231,7 +231,7 @@ namespace RandomTablesTests.LocalArea
             var mockSeedGenerator = SeedHelper.GetMockSeedGenerator(seeds);
 
             var seasAndRivers = new SeasAndRivers(mockSeedGenerator.Object);
-            var seaAndRiverResult = seasAndRivers.GetLocalAreaDetail();
+            var seaAndRiverResult = seasAndRivers.GetRandomTableResult();
 
             var expectedseaAndRiverResult = "No Significant Water";
 

@@ -26,7 +26,7 @@ namespace RandomTablesTests.KingdomsAndSociety
             var mockSeedGenerator = SeedHelper.GetMockSeedGenerator(seeds);
 
             var kingdomClimate = new KingdomClimate(mockSeedGenerator.Object);
-            var kingdomClimateResult = kingdomClimate.GetLocalAreaDetail();
+            var kingdomClimateResult = kingdomClimate.GetRandomTableResult();
 
             var expectedKingdomClimateResult = "Super-arctic";
 
@@ -43,7 +43,7 @@ namespace RandomTablesTests.KingdomsAndSociety
             var mockSeedGenerator = SeedHelper.GetMockSeedGenerator(seeds);
 
             var kingdomClimate = new KingdomClimate(mockSeedGenerator.Object);
-            var kingdomClimateResult = kingdomClimate.GetLocalAreaDetail();
+            var kingdomClimateResult = kingdomClimate.GetRandomTableResult();
 
             var expectedKingdomClimateResult = "Arctic";
 
@@ -60,7 +60,7 @@ namespace RandomTablesTests.KingdomsAndSociety
             var mockSeedGenerator = SeedHelper.GetMockSeedGenerator(seeds);
 
             var kingdomClimate = new KingdomClimate(mockSeedGenerator.Object);
-            var kingdomClimateResult = kingdomClimate.GetLocalAreaDetail();
+            var kingdomClimateResult = kingdomClimate.GetRandomTableResult();
 
             var expectedKingdomClimateResult = "Arctic";
 
@@ -77,7 +77,7 @@ namespace RandomTablesTests.KingdomsAndSociety
             var mockSeedGenerator = SeedHelper.GetMockSeedGenerator(seeds);
 
             var kingdomClimate = new KingdomClimate(mockSeedGenerator.Object);
-            var kingdomClimateResult = kingdomClimate.GetLocalAreaDetail();
+            var kingdomClimateResult = kingdomClimate.GetRandomTableResult();
 
             var expectedKingdomClimateResult = "Sub-arctic";
 
@@ -94,7 +94,7 @@ namespace RandomTablesTests.KingdomsAndSociety
             var mockSeedGenerator = SeedHelper.GetMockSeedGenerator(seeds);
 
             var kingdomClimate = new KingdomClimate(mockSeedGenerator.Object);
-            var kingdomClimateResult = kingdomClimate.GetLocalAreaDetail();
+            var kingdomClimateResult = kingdomClimate.GetRandomTableResult();
 
             var expectedKingdomClimateResult = "Sub-arctic";
 
@@ -111,7 +111,7 @@ namespace RandomTablesTests.KingdomsAndSociety
             var mockSeedGenerator = SeedHelper.GetMockSeedGenerator(seeds);
 
             var kingdomClimate = new KingdomClimate(mockSeedGenerator.Object);
-            var kingdomClimateResult = kingdomClimate.GetLocalAreaDetail();
+            var kingdomClimateResult = kingdomClimate.GetRandomTableResult();
 
             var expectedKingdomClimateResult = "Temperate";
 
@@ -128,7 +128,7 @@ namespace RandomTablesTests.KingdomsAndSociety
             var mockSeedGenerator = SeedHelper.GetMockSeedGenerator(seeds);
 
             var kingdomClimate = new KingdomClimate(mockSeedGenerator.Object);
-            var kingdomClimateResult = kingdomClimate.GetLocalAreaDetail();
+            var kingdomClimateResult = kingdomClimate.GetRandomTableResult();
 
             var expectedKingdomClimateResult = "Temperate";
 
@@ -145,7 +145,7 @@ namespace RandomTablesTests.KingdomsAndSociety
             var mockSeedGenerator = SeedHelper.GetMockSeedGenerator(seeds);
 
             var kingdomClimate = new KingdomClimate(mockSeedGenerator.Object);
-            var kingdomClimateResult = kingdomClimate.GetLocalAreaDetail();
+            var kingdomClimateResult = kingdomClimate.GetRandomTableResult();
 
             var expectedKingdomClimateResult = "Sub-tropical";
 
@@ -162,7 +162,7 @@ namespace RandomTablesTests.KingdomsAndSociety
             var mockSeedGenerator = SeedHelper.GetMockSeedGenerator(seeds);
 
             var kingdomClimate = new KingdomClimate(mockSeedGenerator.Object);
-            var kingdomClimateResult = kingdomClimate.GetLocalAreaDetail();
+            var kingdomClimateResult = kingdomClimate.GetRandomTableResult();
 
             var expectedKingdomClimateResult = "Sub-tropical";
 
@@ -179,7 +179,7 @@ namespace RandomTablesTests.KingdomsAndSociety
             var mockSeedGenerator = SeedHelper.GetMockSeedGenerator(seeds);
 
             var kingdomClimate = new KingdomClimate(mockSeedGenerator.Object);
-            var kingdomClimateResult = kingdomClimate.GetLocalAreaDetail();
+            var kingdomClimateResult = kingdomClimate.GetRandomTableResult();
 
             var expectedKingdomClimateResult = "Tropical";
 
@@ -196,7 +196,7 @@ namespace RandomTablesTests.KingdomsAndSociety
             var mockSeedGenerator = SeedHelper.GetMockSeedGenerator(seeds);
 
             var kingdomClimate = new KingdomClimate(mockSeedGenerator.Object);
-            var kingdomClimateResult = kingdomClimate.GetLocalAreaDetail();
+            var kingdomClimateResult = kingdomClimate.GetRandomTableResult();
 
             var expectedKingdomClimateResult = "Tropical";
 
@@ -213,7 +213,7 @@ namespace RandomTablesTests.KingdomsAndSociety
             var mockSeedGenerator = SeedHelper.GetMockSeedGenerator(seeds);
 
             var kingdomClimate = new KingdomClimate(mockSeedGenerator.Object);
-            var kingdomClimateResult = kingdomClimate.GetLocalAreaDetail();
+            var kingdomClimateResult = kingdomClimate.GetRandomTableResult();
 
             var expectedKingdomClimateResult = "Super-tropical";
 
@@ -230,7 +230,7 @@ namespace RandomTablesTests.KingdomsAndSociety
             var mockSeedGenerator = SeedHelper.GetMockSeedGenerator(seeds);
 
             var kingdomClimate = new KingdomClimate(mockSeedGenerator.Object);
-            var kingdomClimateResult = kingdomClimate.GetLocalAreaDetail();
+            var kingdomClimateResult = kingdomClimate.GetRandomTableResult();
 
             var expectedKingdomClimateResult = "Super-tropical";
 
@@ -247,7 +247,7 @@ namespace RandomTablesTests.KingdomsAndSociety
             var mockSeedGenerator = SeedHelper.GetMockSeedGenerator(seeds);
 
             var kingdomClimate = new KingdomClimate(mockSeedGenerator.Object);
-            var kingdomClimateResult = kingdomClimate.GetLocalAreaDetail();
+            var kingdomClimateResult = kingdomClimate.GetRandomTableResult();
 
             var expectedKingdomClimateResult = "Super-tropical";
 

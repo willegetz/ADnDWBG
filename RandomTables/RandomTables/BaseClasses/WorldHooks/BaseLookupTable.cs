@@ -4,13 +4,13 @@ using System.Collections.Generic;
 
 namespace RandomTables.BaseClasses.WorldHooks
 {
-    public class BaseSubtype : IWorldHookSubtype
+    public class BaseLookupTable : ILookupTable
     {
         private IDie die;
 
-        public Dictionary<int, string> SubtypeLookup { get; set; }
+        public Dictionary<int, string> LookupTable { get; set; }
 
-        public BaseSubtype(IDie die)
+        public BaseLookupTable(IDie die)
         {
             this.die = die;
         }
@@ -20,10 +20,10 @@ namespace RandomTables.BaseClasses.WorldHooks
             return die.RollDie();
         }
 
-        public string GetCharacteristicSubtype()
+        public string GetLookupTableResult()
         {
             var rollResult = RollDie();
-            var subtype = SubtypeLookup[rollResult];
+            var subtype = LookupTable[rollResult];
 
             return subtype;
         }

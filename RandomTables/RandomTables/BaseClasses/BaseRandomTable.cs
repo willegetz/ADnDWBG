@@ -20,7 +20,7 @@ namespace RandomTables.BaseClasses
             return die.RollDie();
         }
 
-        public string GetLocalAreaDetail()
+        public string GetRandomTableResult()
         {
             var rollResult = RollDie();
             var result = RandomTable.Query(rollResult)

@@ -55,14 +55,14 @@
     <Compile Include="Factories\WorldHooks\ClimateOrLandformFactory.cs" />
     <Compile Include="Factories\WorldHooks\SitesOfInterestFactory.cs" />
     <Compile Include="Interfaces\WorldHooks\IWorldHookFactory.cs" />
-    <Compile Include="Interfaces\WorldHooks\IWorldHookSubtype.cs" />
+    <Compile Include="Interfaces\WorldHooks\ILookupTable.cs" />
     <Compile Include="KingdomsAndSociety\KingdomClimate.cs" />
     <Compile Include="LocalArea\MountainsAndHills.cs" />
     <Compile Include="LocalArea\SeasAndRivers.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="WorldHooks\Characteristics.cs" />
     <Compile Include="WorldHooks\Subtypes\HistoricalSybtype.cs" />
-    <Compile Include="BaseClasses\WorldHooks\BaseSubtype.cs" />
+    <Compile Include="BaseClasses\WorldHooks\BaseLookupTable.cs" />
     <Compile Include="WorldHooks\Subtypes\SitesOfInterestSubtype.cs" />
     <Compile Include="WorldHooks\Subtypes\ClimateOrLandformSubtype.cs" />
     <Compile Include="WorldHooks\Subtypes\SituationsSubtype.cs" />

@@ -6,11 +6,11 @@ namespace RandomTables.BaseClasses.WorldHooks
     {
         public string CharacteristicType { get; private set; }
 
-        public string Subtype { get { return _subtype.GetCharacteristicSubtype(); } }
+        public string Subtype { get { return _subtype.GetLookupTableResult(); } }
 
-        private IWorldHookSubtype _subtype;
+        private ILookupTable _subtype;
 
-        public BaseCharacteristicType(string characteristicType, IWorldHookSubtype subtype)
+        public BaseCharacteristicType(string characteristicType, ILookupTable subtype)
         {
             CharacteristicType = characteristicType;
             _subtype = subtype;

@@ -5,7 +5,7 @@ using System.Collections.Generic;
 
 namespace RandomTables.WorldHooks.Subtypes
 {
-    public class CulturesSubtype : BaseSubtype
+    public class CulturesSubtype : BaseLookupTable
     {
         private Dictionary<int, string> cultures = new Dictionary<int, string>()
         {
@@ -25,12 +25,12 @@ namespace RandomTables.WorldHooks.Subtypes
 
         public CulturesSubtype(): base(new D12())
         {
-            base.SubtypeLookup = cultures;
+            base.LookupTable = cultures;
         }
 
         public CulturesSubtype(ISeedGenerator seedGenerator) : base(new D12(seedGenerator))
         {
-            base.SubtypeLookup = cultures;
+            base.LookupTable = cultures;
         }
     }
 }

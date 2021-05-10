@@ -26,7 +26,7 @@ namespace RandomTablesTests.LocalArea
             var mockSeedGenerator = SeedHelper.GetMockSeedGenerator(seeds);
 
             var mountainsAndHills = new MountainsAndHills(mockSeedGenerator.Object);
-            var mountainsAndHillsResult = mountainsAndHills.GetLocalAreaDetail();
+            var mountainsAndHillsResult = mountainsAndHills.GetRandomTableResult();
 
             var expectedMountainsAndHillsResult = "Very Mountainous";
 
@@ -43,7 +43,7 @@ namespace RandomTablesTests.LocalArea
             var mockSeedGenerator = SeedHelper.GetMockSeedGenerator(seeds);
 
             var mountainsAndHills = new MountainsAndHills(mockSeedGenerator.Object);
-            var mountainsAndHillsResult = mountainsAndHills.GetLocalAreaDetail();
+            var mountainsAndHillsResult = mountainsAndHills.GetRandomTableResult();
 
             var expectedMountainsAndHillsResult = "Very Mountainous";
 
@@ -60,7 +60,7 @@ namespace RandomTablesTests.LocalArea
             var mockSeedGenerator = SeedHelper.GetMockSeedGenerator(seeds);
 
             var mountainsAndHills = new MountainsAndHills(mockSeedGenerator.Object);
-            var mountainsAndHillsResult = mountainsAndHills.GetLocalAreaDetail();
+            var mountainsAndHillsResult = mountainsAndHills.GetRandomTableResult();
 
             var expectedMountainsAndHillsResult = "Mountainous";
 
@@ -77,7 +77,7 @@ namespace RandomTablesTests.LocalArea
             var mockSeedGenerator = SeedHelper.GetMockSeedGenerator(seeds);
 
             var mountainsAndHills = new MountainsAndHills(mockSeedGenerator.Object);
-            var mountainsAndHillsResult = mountainsAndHills.GetLocalAreaDetail();
+            var mountainsAndHillsResult = mountainsAndHills.GetRandomTableResult();
 
             var expectedMountainsAndHillsResult = "Mountainous";
 
@@ -94,7 +94,7 @@ namespace RandomTablesTests.LocalArea
             var mockSeedGenerator = SeedHelper.GetMockSeedGenerator(seeds);
 
             var mountainsAndHills = new MountainsAndHills(mockSeedGenerator.Object);
-            var mountainsAndHillsResult = mountainsAndHills.GetLocalAreaDetail();
+            var mountainsAndHillsResult = mountainsAndHills.GetRandomTableResult();
 
             var expectedMountainsAndHillsResult = "Rugged Hills";
 
@@ -111,7 +111,7 @@ namespace RandomTablesTests.LocalArea
             var mockSeedGenerator = SeedHelper.GetMockSeedGenerator(seeds);
 
             var mountainsAndHills = new MountainsAndHills(mockSeedGenerator.Object);
-            var mountainsAndHillsResult = mountainsAndHills.GetLocalAreaDetail();
+            var mountainsAndHillsResult = mountainsAndHills.GetRandomTableResult();
 
             var expectedMountainsAndHillsResult = "Rugged Hills";
 
@@ -128,7 +128,7 @@ namespace RandomTablesTests.LocalArea
             var mockSeedGenerator = SeedHelper.GetMockSeedGenerator(seeds);
 
             var mountainsAndHills = new MountainsAndHills(mockSeedGenerator.Object);
-            var mountainsAndHillsResult = mountainsAndHills.GetLocalAreaDetail();
+            var mountainsAndHillsResult = mountainsAndHills.GetRandomTableResult();
 
             var expectedMountainsAndHillsResult = "Gentle Hills";
 
@@ -145,7 +145,7 @@ namespace RandomTablesTests.LocalArea
             var mockSeedGenerator = SeedHelper.GetMockSeedGenerator(seeds);
 
             var mountainsAndHills = new MountainsAndHills(mockSeedGenerator.Object);
-            var mountainsAndHillsResult = mountainsAndHills.GetLocalAreaDetail();
+            var mountainsAndHillsResult = mountainsAndHills.GetRandomTableResult();
 
             var expectedMountainsAndHillsResult = "Gentle Hills";
 
@@ -162,7 +162,7 @@ namespace RandomTablesTests.LocalArea
             var mockSeedGenerator = SeedHelper.GetMockSeedGenerator(seeds);
 
             var mountainsAndHills = new MountainsAndHills(mockSeedGenerator.Object);
-            var mountainsAndHillsResult = mountainsAndHills.GetLocalAreaDetail();
+            var mountainsAndHillsResult = mountainsAndHills.GetRandomTableResult();
 
             var expectedMountainsAndHillsResult = "Tablelands";
 
@@ -179,7 +179,7 @@ namespace RandomTablesTests.LocalArea
             var mockSeedGenerator = SeedHelper.GetMockSeedGenerator(seeds);
 
             var mountainsAndHills = new MountainsAndHills(mockSeedGenerator.Object);
-            var mountainsAndHillsResult = mountainsAndHills.GetLocalAreaDetail();
+            var mountainsAndHillsResult = mountainsAndHills.GetRandomTableResult();
 
             var expectedMountainsAndHillsResult = "Tablelands";
 
@@ -196,7 +196,7 @@ namespace RandomTablesTests.LocalArea
             var mockSeedGenerator = SeedHelper.GetMockSeedGenerator(seeds);
 
             var mountainsAndHills = new MountainsAndHills(mockSeedGenerator.Object);
-            var mountainsAndHillsResult = mountainsAndHills.GetLocalAreaDetail();
+            var mountainsAndHillsResult = mountainsAndHills.GetRandomTableResult();
 
             var expectedMountainsAndHillsResult = "Plains";
 
@@ -213,7 +213,7 @@ namespace RandomTablesTests.LocalArea
             var mockSeedGenerator = SeedHelper.GetMockSeedGenerator(seeds);
 
             var mountainsAndHills = new MountainsAndHills(mockSeedGenerator.Object);
-            var mountainsAndHillsResult = mountainsAndHills.GetLocalAreaDetail();
+            var mountainsAndHillsResult = mountainsAndHills.GetRandomTableResult();
 
             var expectedMountainsAndHillsResult = "Plains";
 
@@ -230,7 +230,7 @@ namespace RandomTablesTests.LocalArea
             var mockSeedGenerator = SeedHelper.GetMockSeedGenerator(seeds);
 
             var mountainsAndHills = new MountainsAndHills(mockSeedGenerator.Object);
-            var mountainsAndHillsResult = mountainsAndHills.GetLocalAreaDetail();
+            var mountainsAndHillsResult = mountainsAndHills.GetRandomTableResult();
 
             var expectedMountainsAndHillsResult = "Plains";
 
