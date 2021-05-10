@@ -73,6 +73,7 @@
     <Compile Include="WorldHooks\Types\Historical.cs" />
     <Compile Include="WorldHooks\Types\Situations.cs" />
     <Compile Include="WorldHooks\Types\SitesOfInterest.cs" />
+    <Compile Include="WorldsAndPlanetology\SeasonalVariations.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
