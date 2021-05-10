@@ -7,7 +7,7 @@ namespace RandomTables.KingdomsAndSociety
 {
     public class KingdomClimate
     {
-        private PercentileDice0and0 _percentileDice;
+        private IDie die;
 
         public IntervalTree<int, string> kingdomClimateLookup = new IntervalTree<int, string>()
         {
@@ -23,17 +23,22 @@ namespace RandomTables.KingdomsAndSociety
 
         public KingdomClimate()
         {
-            _percentileDice = new PercentileDice0and0();
+            die = new PercentileDice0and0();
         }
 
         public KingdomClimate(ISeedGenerator seedGenerator)
         {
-            _percentileDice = new PercentileDice0and0(seedGenerator);
+            die = new PercentileDice0and0(seedGenerator);
+        }
+
+        public int RollDie()
+        {
+            return die.RollDie();
         }
 
         public string GetLocalAreaDetail()
         {
-            var rollResult = _percentileDice.RollDie();
+            var rollResult = RollDie();
             var result = kingdomClimateLookup.Query(rollResult)
                                                 .ToList()
                                                 .Select(x => x)

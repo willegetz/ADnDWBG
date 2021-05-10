@@ -1,6 +1,6 @@
 ﻿using RandomTables.Interfaces.WorldHooks;
 
-namespace RandomTables.WorldHooks.Types
+namespace RandomTables.BaseClasses.WorldHooks
 {
     public class BaseCharacteristicType : IWorldHook
     {

@@ -7,7 +7,7 @@ namespace RandomTables.LocalArea
 {
     public class MountainsAndHills
     {
-        private PercentileDice0and0 _percentileDice;
+        private IDie die;
 
         public IntervalTree<int, string> mountainsAndHillsLookup = new IntervalTree<int, string>()
         {
@@ -22,17 +22,22 @@ namespace RandomTables.LocalArea
 
         public MountainsAndHills()
         {
-            _percentileDice = new PercentileDice0and0();
+            die = new PercentileDice0and0();
         }
 
         public MountainsAndHills(ISeedGenerator seedGenerator)
         {
-            _percentileDice = new PercentileDice0and0(seedGenerator);
+            die = new PercentileDice0and0(seedGenerator);
+        }
+
+        public int RollDie()
+        {
+            return die.RollDie();
         }
 
         public string GetLocalAreaDetail()
         {
-            var rollResult = _percentileDice.RollDie();
+            var rollResult = RollDie();
             var result = mountainsAndHillsLookup.Query(rollResult)
                                                 .ToList()
                                                 .Select(x => x)

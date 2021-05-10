@@ -1,4 +1,5 @@
 ﻿using DiceTypes.Interfaces;
+using RandomTables.BaseClasses.WorldHooks;
 using RandomTables.WorldHooks.Subtypes;
 
 namespace RandomTables.WorldHooks.Types
