@@ -1,14 +1,13 @@
 ﻿using DiceTypes.DieTypes.Complex;
 using DiceTypes.Interfaces;
 using IntervalTree;
+using RandomTables.BaseClasses;
 using System.Linq;
 
 namespace RandomTables.LocalArea
 {
-    public class SeasAndRivers
+    public class SeasAndRivers : BaseRandomTable
     {
-        private IDie die;
-
         public IntervalTree<int, string> seasAndRiversLookup = new IntervalTree<int, string>()
         {
             {1, 10, "Island" },
@@ -20,29 +19,14 @@ namespace RandomTables.LocalArea
             {0, 0, "No Significant Water" }
         };
 
-        public SeasAndRivers()
+        public SeasAndRivers() : base(new PercentileDice0and0())
         {
-            die = new PercentileDice0and0();
+            base.RandomTable = seasAndRiversLookup;
         }
 
-        public SeasAndRivers(ISeedGenerator seedGenerator)
+        public SeasAndRivers(ISeedGenerator seedGenerator) : base(new PercentileDice0and0(seedGenerator))
         {
-            die = new PercentileDice0and0(seedGenerator);
-        }
-
-        public int RollDie()
-        {
-            return die.RollDie();
-        }
-
-        public string GetLocalAreaDetail()
-        {
-            var rollResult = RollDie();
-            var result = seasAndRiversLookup.Query(rollResult)
-                                            .ToList()
-                                            .Select(x => x)
-                                            .FirstOrDefault();
-            return result;
+            base.RandomTable = seasAndRiversLookup;
         }
     }
 }

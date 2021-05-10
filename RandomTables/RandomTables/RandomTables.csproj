@@ -47,6 +47,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BaseClasses\BaseRandomTable.cs" />
     <Compile Include="Factories\WorldHooks\CulturesFactory.cs" />
     <Compile Include="Factories\WorldHooks\HistoricalFactory.cs" />
     <Compile Include="Factories\WorldHooks\SituationsFactory.cs" />
