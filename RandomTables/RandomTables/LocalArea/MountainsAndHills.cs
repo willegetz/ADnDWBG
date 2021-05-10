@@ -1,14 +1,12 @@
 ﻿using DiceTypes.DieTypes.Complex;
 using DiceTypes.Interfaces;
 using IntervalTree;
-using System.Linq;
+using RandomTables.BaseClasses;
 
 namespace RandomTables.LocalArea
 {
-    public class MountainsAndHills
+    public class MountainsAndHills : BaseRandomTable
     {
-        private IDie die;
-
         public IntervalTree<int, string> mountainsAndHillsLookup = new IntervalTree<int, string>()
         {
             {1, 8, "Very Mountainous" },
@@ -20,29 +18,14 @@ namespace RandomTables.LocalArea
             {0, 0, "Plains" }
         };
 
-        public MountainsAndHills()
+        public MountainsAndHills() : base(new PercentileDice0and0())
         {
-            die = new PercentileDice0and0();
+            base.RandomTable = mountainsAndHillsLookup;
         }
 
-        public MountainsAndHills(ISeedGenerator seedGenerator)
+        public MountainsAndHills(ISeedGenerator seedGenerator) : base(new PercentileDice0and0(seedGenerator))
         {
-            die = new PercentileDice0and0(seedGenerator);
-        }
-
-        public int RollDie()
-        {
-            return die.RollDie();
-        }
-
-        public string GetLocalAreaDetail()
-        {
-            var rollResult = RollDie();
-            var result = mountainsAndHillsLookup.Query(rollResult)
-                                                .ToList()
-                                                .Select(x => x)
-                                                .FirstOrDefault();
-            return result;
+            base.RandomTable = mountainsAndHillsLookup;
         }
     }
 }

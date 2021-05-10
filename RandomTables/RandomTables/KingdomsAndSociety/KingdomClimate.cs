@@ -1,14 +1,12 @@
 ﻿using DiceTypes.DieTypes.Complex;
 using DiceTypes.Interfaces;
 using IntervalTree;
-using System.Linq;
+using RandomTables.BaseClasses;
 
 namespace RandomTables.KingdomsAndSociety
 {
-    public class KingdomClimate
+    public class KingdomClimate : BaseRandomTable
     {
-        private IDie die;
-
         public IntervalTree<int, string> kingdomClimateLookup = new IntervalTree<int, string>()
         {
             {1, 1, "Super-arctic" },
@@ -21,29 +19,14 @@ namespace RandomTables.KingdomsAndSociety
             {0, 0, "Super-tropical" }
         };
 
-        public KingdomClimate()
+        public KingdomClimate() : base(new PercentileDice0and0())
         {
-            die = new PercentileDice0and0();
+            base.RandomTable = kingdomClimateLookup;
         }
 
-        public KingdomClimate(ISeedGenerator seedGenerator)
+        public KingdomClimate(ISeedGenerator seedGenerator) : base(new PercentileDice0and0(seedGenerator))
         {
-            die = new PercentileDice0and0(seedGenerator);
-        }
-
-        public int RollDie()
-        {
-            return die.RollDie();
-        }
-
-        public string GetLocalAreaDetail()
-        {
-            var rollResult = RollDie();
-            var result = kingdomClimateLookup.Query(rollResult)
-                                                .ToList()
-                                                .Select(x => x)
-                                                .FirstOrDefault();
-            return result;
+            base.RandomTable = kingdomClimateLookup;
         }
     }
 }

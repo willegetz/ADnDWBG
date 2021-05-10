@@ -2,7 +2,6 @@
 using DiceTypes.Interfaces;
 using IntervalTree;
 using RandomTables.BaseClasses;
-using System.Linq;
 
 namespace RandomTables.LocalArea
 {
